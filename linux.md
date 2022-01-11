@@ -127,33 +127,33 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 
 # permissions
 
-0 | ---
-- | ---
-1 | --x
-2 | -w-
-3 | -wx
-4 | r--
-5 | r-x
-6 | rw-
-7 | rwx
+| 0   | --- |
+| --- | --- |
+| 1   | --x |
+| 2   | -w- |
+| 3   | -wx |
+| 4   | r-- |
+| 5   | r-x |
+| 6   | rw- |
+| 7   | rwx |
 
 # install custom apps
 
 1. put it on `/opt`
 2. create launcher `/usr/share/applications/yourapp.desktop`:
 
-  ```
-  [Desktop Entry]
-  Version=1.0
-  Encoding=UTF-8
-  Type=Application
-  Terminal=false
-  Exec=/path/to/yourapp
-  Name=YourApp
-  Comment=Description of YourApp
-  Icon=/path/to/yourapp.png
-  Categories=Development;
-  ```
+```
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Type=Application
+Terminal=false
+Exec=/path/to/yourapp
+Name=YourApp
+Comment=Description of YourApp
+Icon=/path/to/yourapp.png
+Categories=Development;
+```
 
 # hibernate
 
@@ -162,6 +162,7 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 3. `grep swap /etc/fstab`
 4. add `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=YOUR_VALUE"` on grub `/etc/default/grub`
 5. update grub `sudo update-grub`
+   1. in case of problems `sudo grub-install`
 6. test it `sudo systemctl hibernate` or `pm-hibernate`
 
 # backup
@@ -299,13 +300,13 @@ sudo apt install openrazer-meta
 1. copy grub razer theme `sudo cp -rf /media/isaac/Backup/configs/grub-theme /boot/grub/themes/razer`
 2. edit `/etc/default/grub`
 
-  ```
-  GRUB_CMDLINE_LINUX_DEFAULT="button.lid_init_state=open intel_idle.max_cstate=4"
-  # gfx mode for RBS 4k
-  GRUB_GFXMODE="3840x2160-32"
-  GRUB_GFXPAYLOAD_LINUX="3840x2160-32"
-  GRUB_THEME="/boot/grub/themes/razer/theme.txt"
-  ```
+```
+GRUB_CMDLINE_LINUX_DEFAULT="button.lid_init_state=open intel_idle.max_cstate=4"
+# gfx mode for RBS 4k
+GRUB_GFXMODE="3840x2160-32"
+GRUB_GFXPAYLOAD_LINUX="3840x2160-32"
+GRUB_THEME="/boot/grub/themes/razer/theme.txt"
+```
 
 3. set it up: `sudo update-grub`
 
