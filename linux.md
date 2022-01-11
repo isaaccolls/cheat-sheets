@@ -33,6 +33,7 @@
 - Change permissions recursively only to files `find . -type f -exec chmod -R 0644 {} \;`
 - check actual shell `echo $0`
 - cleanup: `sudo apt-get autoremove`&& `sudo apt-get autoclean`
+- kill: `pkill -fl Postman`
 
 ## linux kernel version
 

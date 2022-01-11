@@ -7,6 +7,7 @@
 - show logs: `kubectl logs -f [pod-name]`
 - show multiple pods logs: `kubectl logs -f deployment/<app-name> --all-containers=true`
 - delete deploy: `kubectl delete deploy [app-name]`
+- delete pod: `kubectl delete pod [pod]`
 - show secrets: `kubectl get secrets`
 - list all services in the namespace: `kubectl get services`
 - describe commands with verbose output: `kubectl describe pods my-pod`

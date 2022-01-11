@@ -81,15 +81,8 @@ add to package.json
 ```json
 {
   "lint-staged": {
-    "*.{js,jsx}": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{html,css,scss,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js,jsx}": ["prettier --write", "eslint --fix", "git add"],
+    "*.{html,css,scss,json,md}": ["prettier --write", "git add"]
   }
 }
 ```
