@@ -282,7 +282,9 @@ sudo apt install openrazer-meta
 ## configs
 
 - workspace should contain all monitors: `gsettings set org.gnome.mutter workspaces-only-on-primary false`
-- theme, cursor and icons: check for something cool on [pling](https://www.pling.com/p/1403328/) extract it and copy to `~/.themes/` or `~/.icons/` respectively
+- theme, cursor and icons: check for something cool on [pling](https://www.pling.com/p/1403328/)
+  - extract themes to `~/.themes/`
+  - extract cursor and icons to `~/.icons/` or `~/usr/share/icons/` for system side installation
 
 ### tweaks
 
