@@ -13,6 +13,7 @@
 - describe commands with verbose output: `kubectl describe pods my-pod`
 - entrar a la Shell de un POD: `kubectl exec -it [POD_NAME] -- sh`
 - filtrar variables de entorno del POD (inside Shell): `printenv | grep -i database`
+- get all resources: `kubectl get all -n studytonight`
 
 ## KONG
 
