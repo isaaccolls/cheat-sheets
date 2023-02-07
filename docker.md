@@ -2,11 +2,52 @@
 - [manage docker](#manage-docker)
 - [Uninstall Docker CE](#uninstall-docker-ce)
 - [images](#images)
+  - [official images](#official-images)
+  - [check images](#check-images)
+  - [create image](#create-image)
+  - [check history](#check-history)
+  - [remove images](#remove-images)
 - [containers](#containers)
+  - [create a container](#create-a-container)
+  - [remove container](#remove-container)
+  - [logs](#logs)
+  - [check docker process/containers](#check-docker-processcontainers)
+  - [important commands](#important-commands)
+  - [create ssl](#create-ssl)
+  - [inspect](#inspect)
+  - [run container's shell](#run-containers-shell)
+  - [stats](#stats)
+  - [copy files between host and container](#copy-files-between-host-and-container)
+  - [commit](#commit)
+  - [overwrite cmd](#overwrite-cmd)
+  - [simple machine](#simple-machine)
+  - [self-destructing containers](#self-destructing-containers)
+  - [start one or more stopped containers](#start-one-or-more-stopped-containers)
 - [volumes](#volumes)
+  - [list volumes](#list-volumes)
+  - [create volume](#create-volume)
+  - [remove volume](#remove-volume)
+  - [assgin volume to a container](#assgin-volume-to-a-container)
+  - [Dangling volumes 😉](#dangling-volumes-)
 - [networking](#networking)
+  - [list networks](#list-networks)
+  - [inspect](#inspect-1)
+  - [create network](#create-network)
+  - [connect container](#connect-container)
+  - [disconnect network](#disconnect-network)
+  - [delete network](#delete-network)
+  - [ip assignment](#ip-assignment)
+  - [host and none](#host-and-none)
 - [Docker Compose](#docker-compose)
+  - [install](#install)
+  - [file](#file)
+  - [manage](#manage)
+  - [custom project name](#custom-project-name)
+  - [logs](#logs-1)
 - [registry](#registry)
+  - [upload image](#upload-image)
+  - [download image](#download-image)
+  - [share registry](#share-registry)
 
 # Get Docker CE for Ubuntu
 
@@ -18,12 +59,11 @@
 
 # manage docker
 
-```bash
-sudo systemctl status docker
-sudo systemctl start docker
-sudo systemctl enable docker
-sudo systemctl disable docker
-```
+- status: `sudo systemctl status docker`
+- start: `sudo systemctl start docker`
+- enable: `sudo systemctl enable docker`
+- disable: `sudo systemctl disable docker`
+- clean: `docker system prune`
 
 # Uninstall Docker CE
 
@@ -84,13 +124,17 @@ echo $prueba1 😉
 
 ## remove container
 
-```bash
-docker rm -fv apache
-```
+- stop `docker container stop [container-name]`
+- remove:
 
-- _-f_: Force the removal of a running container (uses SIGKILL)
-- _-v_: Remove the volumes associated with the container
-- remove all
+  ```bash
+  docker rm -fv apache
+  ```
+
+  - _-f_: Force the removal of a running container (uses SIGKILL)
+  - _-v_: Remove the volumes associated with the container
+
+### remove all
 
 ```bash
 docker ps -q | xargs docker rm -f

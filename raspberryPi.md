@@ -2,6 +2,7 @@
 
 - show config menu: `sudo raspi-config`
 - enable ssh: `sudo systemctl enable ssh`
+  - create file: `/boot/ssh/`
 - working without hdmi: Uncomment the below line `hdmi_force_hotplug=1` in the file `/boot/config.txt`
 
 ## get hardware revision

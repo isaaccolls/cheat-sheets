@@ -4,6 +4,14 @@
 
 # sql
 
+## show tables
+
+```sql
+SHOW TABLES FROM database_name;
+SHOW TABLES LIKE pattern;
+SHOW TABLES LIKE 'permissions%';
+```
+
 ## create a new table
 
 ```sql
@@ -20,6 +28,7 @@ CREATE TABLE table_name(
 ```sql
 SELECT * FROM table_name WHERE id=420;
 SELECT * FROM table_name WHERE name='marielis';
+SELECT * FROM table_name WHERE name like '%marielis%';
 ```
 
 ## update data
@@ -31,7 +40,9 @@ UPDATE table_name SET name='marielis' WHERE email='marielis@email.com';
 ## delete table
 
 ```sql
+SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE table_name;
+SET FOREIGN_KEY_CHECKS = 1;
 ```
 
 ## delete database
@@ -45,8 +56,6 @@ DROP DATABASE db_name;
 ### inner join
 
 Use a inner join when you want data belonging to both tables. The data must be present in both tables for it to be shown in rows returned (null values skipped)
-
-```sql###e B. Use this when you want all values returned even null from the left side table (tableA)
 
 ```sql
 SELECT * FROM TableA a LEFT JOIN TableB b on a.id = b.id;
@@ -77,6 +86,12 @@ FROM
   INFORMATION_SCHEMA.KEY_COLUMN_USAGE
 WHERE
 CONSTRAINT_NAME like 'FK_e%'
+```
+
+### delete it
+
+```sql
+alter table `template_manager_2`.`section_positions` drop foreign key FK_e718991059d15956316121485fb;
 ```
 
 # postgresql
@@ -120,3 +135,5 @@ sudo service postgresql status
 - create database: `create database db_name;`
 - acces/use a database: `USE db_name;`
 - check tables: `SHOW tables;`
+- processlist : `SHOW PROCESSLIST;`
+  - kill one: `KILL [id]`

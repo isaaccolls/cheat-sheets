@@ -1,34 +1,38 @@
 <!-- MarkdownTOC autolink="true" levels="1,2" -->
 
 - [install](#install)
-  - [Java](#java)
-  - [maven](#maven)
-  - [spring tools](#spring-tools)
 
 <!-- /MarkdownTOC -->
+
 # install
 
 ## Java
 
 - install java 8
+
 ```bash
-sudo apt install openjdk-8-jre
-sudo apt install openjdk-8-jdk
+sudo apt install default-jre
+sudo apt install default-jdk
 ```
-- version `java -version`
+
+- version `java -version` and `javac -version`
 - Managing Java
+
 ```bash
 sudo update-alternatives --config java
 sudo update-alternatives --config javac <- this for javac
 ```
-- Setting the __JAVA_HOME__ Environment Variable
-    - This command shows each installation of Java along with its installation path: `sudo update-alternatives --config java`
-        - OpenJDK 8 is located at ```/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java.```
-    - Add it on __.zshrc__:
+
+- Setting the **JAVA_HOME** Environment Variable
+  - This command shows each installation of Java along with its installation path: `sudo update-alternatives --config java`
+    - OpenJDK 8 is located at `/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java.`
+  - Add it on **.zshrc**:
+
 ```bash
 export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/"
 export PATH=JAVA_HOME/bin:$PATH
 ```
+
 - Test Enviroment variable `echo $JAVA_HOME`
 
 ## maven
@@ -40,13 +44,16 @@ export PATH=JAVA_HOME/bin:$PATH
 ## spring tools
 
 - download from [https://spring.io/tools](https://spring.io/tools)
+
 ```bash
 sudo cp spring-tool-suite-4-4.3.0.RELEASE-e4.12.0-linux.gtk.x86_64.tar.gz /opt
 cd /opt/
 sudo tar zxvf spring-tool-suite-4-4.3.0.RELEASE-e4.12.0-linux.gtk.x86_64.tar.gz
 sudo ln -s /opt/sts-4.3.0.RELEASE/SpringToolSuite4 /usr/local/bin/sts
 ```
+
 - create launcher `sudo gedit /usr/share/applications/stsLauncher.desktop`
+
 ```
 [Desktop Entry]
 Name=Spring Tool Suite

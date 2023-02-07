@@ -19,7 +19,7 @@
 
 # pip
 
-- install: `sudo apt-get install python3-pip`
+- install: `sudo apt install python3-venv python3-pip`
 - use: `pip3 install simplejson`
 - installed packages: `pip3 freeze`
 - create _requirements.txt_: `pip3 freeze > requirements.txt`

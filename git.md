@@ -1,14 +1,26 @@
+- [generating SSH keys](#generating-ssh-keys)
+- [config](#config)
+  - [change user](#change-user)
+- [Basic commands](#basic-commands)
+  - [Versionar proyecto](#versionar-proyecto)
+  - [diferencias entre un commit y otro](#diferencias-entre-un-commit-y-otro)
+  - [Reset](#reset)
+  - [Branches](#branches)
+  - [Stash](#stash)
+- [Change Git Commit Date](#change-git-commit-date)
+
 # generating SSH keys
 
 `ssh-keygen -t rsa -b 4096 -C "isaac.colls@2brains.cl" -f bitbucket2brains`
 
-# Configuracion básica de Git
+# config
 
-```bash
-git config --global --list
-git config -global user.email your@email.com
-git config -global user.name "Nombre Apellido"
-```
+- list: `git config --global --list`
+- email: `git config -global user.email your@email.com`
+- name: `git config -global user.name "Nombre Apellido"`
+- .gitignore alternative: `.git/info/exclude`
+- pull fast-forward only: `git config --global pull.rebase false`
+- remove some entry: `git config --global --unset <property>`
 
 ## change user
 
@@ -46,6 +58,8 @@ git rm --cached <diretory/*>
 - stage only deleted files with git add `git ls-files --deleted | xargs git add`
 - see the files changed in a commit `git show --name-only [sha]`
 - change a remote git repository `git remote set-url origin git@your.git.repo.example.com:user/repository2.git`
+- pull: `git pull <remote> <branch>`
+  - accept all incoming: `git pull -X theirs`
 
 ## Versionar proyecto
 
@@ -75,7 +89,12 @@ git rm --cached <diretory/*>
 - list all branches `git branch -a`
 - Mover entre ramas y entre commits `git checkout [nombre/sha1]`
 - Crear una nueva rama sin necesidad de usar branch `git checkout -b [nombre_rama]`
-- Merge. Ubicersa en la rama a partir de la cual se quiere absorber los cambios y ejecutar `git merge [nombre]`
+- download commits, refs, and files: `git fetch`
+  - remote: `git fetch <remote>` ex: `git fetch origin`
+  - specific branch: `git fetch <remote> <branch>`
+  - all option: `git fetch --all`
+- Merge. Ubicarse en la rama a partir de la cual se quiere absorber los cambios y ejecutar `git merge [nombre]`
+  - prevents merging in a fast-forward way: `git merge --no-ff`
 - Cambiar un commit a otra rama `git cherry-pick [SHA1]`
 - Delete local branch `git branch -d the_local_branch`
 - To remove a remote branch `git push origin :the_remote_branch`
@@ -83,31 +102,20 @@ git rm --cached <diretory/*>
 
 ## Stash
 
-Es otro de los limbos, como el staging area. Para agregar los cambios estos deben estar en el staging area.
+is a temporary storage
 
-- agregar al stash `git stash`
-- Muestra la lista de stash que tengamos `git stash list`
-- aplicar y borrar stash `git stash pop`
-- Borrar un stash `git stash drop stash@{numero}`
-- remove stash `git stash drop`
-- Aplicamos el último cambio `git stash apply stash@{numero}`
+- save a stash: `git stash`
+- save a stash with a message: `git stash save <message>`
+- list multiple stashes: `git stash list`
+- remove stash last stash: `git stash drop`
+  - remove particular stash: `git stash drop <stash_id>`
+- reapply last stash and remove: `git stash pop`
+  - reapply particular stash: `git stash apply <stash_id>`
+- stashing untracked files: `git stash -u`
+- create branch from stash: `git stash branch <branch_name> <stash_id>`
 
 # Change Git Commit Date
 
-- export next variables
-
-```bash
-export GIT_AUTHOR_DATE="2021-11-24T14:27:10-03:00" ; export GIT_COMMITTER_DATE="2021-11-24T14:27:10-03:00"
-```
-
-- change last commit date
-
-```bash
-GIT_COMMITTER_DATE="2021-10-18T10:02:27-03:00" git commit --amend --no-edit --date "2021-10-18T10:02:27-03:00"
-```
-
-- Revert back to wall clock time
-
-```bash
-unset GIT_AUTHOR_DATE && unset GIT_COMMITTER_DATE
-```
+- export next variables: `export GIT_AUTHOR_DATE="2022-05-03T16:21:12-04:00" ; export GIT_COMMITTER_DATE="2022-05-03T16:21:12-04:00"`
+  - Revert back to wall clock time `unset GIT_AUTHOR_DATE && unset GIT_COMMITTER_DATE`
+- change last commit date: `GIT_COMMITTER_DATE="2022-03-21T10:12:11-03:00" git commit --amend --no-edit --date "2022-03-21T10:12:11-03:00"`

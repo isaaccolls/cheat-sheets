@@ -1,8 +1,23 @@
+# nvm
+
+- install nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
+- version `nvm --version`
+- list versions available to install `nvm ls-remote`
+- install some node version `nvm install 7.1.0`
+- install current LTS version of Node.js.`nvm install --lts`
+- list installed node versions `nvm ls`
+- select node version to use `nvm use 7.1.0`
+- select node version to use **persistent** `nvm alias default [version]`
+- check node version `nvm current` or `node --version`
+- check npm version `npm --version`
+- install yarn `npm install -g yarn`
+
 # node
 
 - version `node -v`
 - run single script `node app.js`
 - run single function `node -e 'require("./modules/Quiz/quiz_model").reset_weekly_user_coins()'`
+- list globally installed packages: `npm list -g --depth 0`
 
 # npm
 
@@ -27,20 +42,6 @@
 - start project `npm start` or `npm start --host ip` or `yarn start`
 - always run nodemon: add scripts on package.json `"start": "nodemon index.js"`
 - run script (on package.json) `npm run deploy` or `yarn run deploy`
-
-# nvm
-
-- install nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`
-- version `nvm --version`
-- list versions available to install `nvm ls-remote`
-- install some node version `nvm install 7.1.0`
-- install current LTS version of Node.js.`nvm install --lts`
-- list installed node versions `nvm ls`
-- select node version to use `nvm use 7.1.0`
-- select node version to use **persistent** `nvm alias default [version]`
-- check node version `nvm current` or `node --version`
-- check npm version `npm --version`
-- install yarn `npm install -g yarn`
 
 # eslint, prettier husky and lint-staged
 

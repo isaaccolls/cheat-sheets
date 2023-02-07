@@ -1,16 +1,32 @@
 - [locations](#locations)
 - [commands / shortcuts / apps](#commands--shortcuts--apps)
+  - [linux kernel version](#linux-kernel-version)
+  - [terminator](#terminator)
+  - [youtube-dl](#youtube-dl)
+  - [spotdl](#spotdl)
+  - [compress](#compress)
 - [permissions](#permissions)
 - [install custom apps](#install-custom-apps)
 - [hibernate](#hibernate)
 - [backup](#backup)
+  - [configs](#configs)
+  - [pictures](#pictures)
+  - [documents](#documents)
+  - [music](#music)
+  - [projects](#projects)
+  - [dark bookmarks](#dark-bookmarks)
 - [after install](#after-install)
+  - [install](#install)
+  - [configs](#configs-1)
+  - [run script when logging](#run-script-when-logging)
+  - [run script when usb plugged in](#run-script-when-usb-plugged-in)
 
 # locations
 
 - desktop entry location `.local/share/applications`
 - polychromatic profiles located: `/home/isaac/.config/polychromatic/profiles`
 - wallpapers `/usr/share/backgrounds`
+- change gnome screenhots default save directory: ~~`gsettings set org.gnome.gnome-screenshot auto-save-directory "${HOME}/Pictures/Screenshots"`~~
 
 # commands / shortcuts / apps
 
@@ -32,8 +48,14 @@
 - Change permissions recursively only to directories `find . -type d -exec chmod -R 0755 {} \;`
 - Change permissions recursively only to files `find . -type f -exec chmod -R 0644 {} \;`
 - check actual shell `echo $0`
-- cleanup: `sudo apt-get autoremove`&& `sudo apt-get autoclean`
 - kill: `pkill -fl Postman`
+- merge pdfs: `pdfunite 1.pdf 2.pdf pdfunite.pdf` (`apt install poppler-utils`)
+- list packages: `dpkg --list | grep <package-name>`
+- uninstalling packages with apt:
+  - remove: `sudo apt remove <package-name>`
+  - purge: `sudo apt purge <package-name>`
+- cleanup: `sudo apt-get clean && sudo apt-get autoremove && sudo apt-get autoclean`
+- clear logs: `truncate -s 0 /var/log/syslog`
 
 ## linux kernel version
 
@@ -58,6 +80,9 @@
 - New group `Shift+click`
 - Broadcast group `Alt+G`
 - Broadcast off `Alt+O`
+- fix twice command error:
+  - `sudo mv /usr/local/bin/ibus-daemon /usr/local/bin/ibus-daemon.bak`
+  - `env --unset=GTK_IM_MODULE terminator`
 
 ### custom config
 
@@ -102,6 +127,9 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 
 - playlist `youtube-dl -i -f best PL_8z4vyyerkMa3Fi6VTw0eXe5ki4R8lc7`
 - music playlist with metadata `youtube-dl -i --write-thumbnail --format 'bestaudio/best' --output '%(title)s.%(ext)s' --embed-thumbnail --add-metadata --extract-audio --audio-format 'mp3' PL_8z4vyyerkPtXYwSg6PRo-uUbkAwVcUY`
+- not found python fix: `sudo ln -s /usr/bin/python3 /usr/bin/python`
+- download mp3: `youtube-dl --extract-audio --audio-format mp3 -f best https://www.youtube.com/watch?v=j-_Amo943XE`
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) sudo apt-get install yt-dlp
 
 ## spotdl
 
@@ -171,12 +199,16 @@ Categories=Development;
 
 - terminator config `cp -fv .config/terminator/config /media/isaac/Backup/configs/terminator`
 - ssh keys `cp -rfv .ssh /media/isaac/Backup/configs/ssh`
+- zsh config `cp -fv .zshrc /media/isaac/Backup/configs/zshrc`
+- aws `cp -rfv .aws /media/isaac/Backup/configs/aws`
+- kube `cp -rfv .kube /media/isaac/Backup/configs/kube`
+- grub `cp -v /etc/default/grub /media/isaac/Backup/configs/grub`
 
 ## pictures
 
 ## documents
 
-- credentials `rm -rfv /media/isaac/Backup/Documents/credentials` `cp -rfv ~/Documents/credentials /media/isaac/Backup/Documents`
+- credentials `rm -rfv /media/isaac/Backup/xxx` `cp -rfv ~/xxx /media/isaac/Backup/xxx`
 - signature.html `rm -rfv /media/isaac/Backup/Documents/signature.html` `cp -rfv ~/Documents/signature.html /media/isaac/Backup/Documents`
 
 ## music
@@ -186,6 +218,10 @@ Categories=Development;
 ## projects
 
 `rm -rf /media/isaac/Backup/Projects` `mkdir /media/isaac/Backup/Projects` `rsync -av --exclude 'node_modules' ~/Projects/ /media/isaac/Backup/Projects`
+
+## dark bookmarks
+
+`cp /opt/tor-browser_en-US/Browser/Desktop/bookmarks.json /media/isaac/Backup/configs/`
 
 # after install
 
@@ -198,7 +234,7 @@ Categories=Development;
 - robomongo
 - dbeaver
 - gparted: `sudo apt-get install gparted`
-- torrent client: elementaryOS default **torrential** or `sudo apt-get install transmission-gtk`
+- torrent client: `sudo apt-get install transmission`
 - operator mono _font_
 - vscode
 - spotify and musixmatch
@@ -257,7 +293,8 @@ sudo apt install pantheon-tweaks
 - check nvidia `nvidia-smi`
 - ubuntu-drivers devices (look for _recommended_)
 - if good recommendation `sudo ubuntu-drivers autoinstall`
-- else `sudo apt install nvidia-driver-460`
+  - else `sudo apt install nvidia-driver-460`
+- To check which card is being used right now: `prime-select query`
 - remove all 💩: `sudo apt-get --purge -y remove 'nvidia*'`
 
 ### open razer
@@ -267,12 +304,15 @@ sudo apt install software-properties-gtk
 sudo add-apt-repository ppa:openrazer/stable
 sudo apt update
 sudo apt install openrazer-meta
+# don't forget below command
+sudo gpasswd -a $USER plugdev
 ```
 
 ### libre office
 
-- calc `sudo apt-get install libreoffice-calc`
-- writer `sudo apt-get install libreoffice-writer`
+- calc: `sudo apt-get install libreoffice-calc`
+- writer: `sudo apt-get install libreoffice-writer`
+- draw: `sudo apt-get install libreoffice-draw`
 
 ### tuxguitar
 
@@ -326,3 +366,23 @@ cd linux-firmware/
 cp i915/* /lib/firmware/i915/
 update-initramfs -u
 ```
+
+## run script when logging
+
+- specific user `~/.config/autostart/my_script.desktop`
+- all users `/etc/xdg/autostart/my_script.desktop`
+
+```
+[Desktop Entry]
+Type=Application
+Name=openrazer start
+Exec=python3 /home/isaac/Projects/openrazer/set.py 50
+Icon=system-run
+X-GNOME-Autostart-enabled=true
+```
+
+## run script when usb plugged in
+
+- add a new rule on `/etc/udev/rules.d/`
+  - name: `openrazer.rules`
+  - content: `ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1532", RUN+="/etc/udev/rules.d/test.sh"`
