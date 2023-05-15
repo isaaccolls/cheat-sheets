@@ -19,6 +19,9 @@
   - [function type expressions](#function-type-expressions)
   - [call signatures](#call-signatures)
   - [construct signatures](#construct-signatures)
+  - [generic functions](#generic-functions)
+  - [inference](#inference)
+  - [constraints](#constraints)
 
 # the basics
 
@@ -348,3 +351,68 @@ function doSomething(fn: DescribableFunction) {
 ```
 
 ## construct signatures
+
+JavaScript functions can also be invoked with the `new` operator
+
+```ts
+type SomeConstructor = {
+  new (s: string): SomeObject;
+};
+function fn(ctor: SomeConstructor) {
+  return new ctor("hello");
+}
+```
+
+## generic functions
+
+In TypeScript, generics are used when we want to describe a correspondence between two values. We do this by declaring a _type parameter_ in the function signature:
+
+```ts
+function firstElement<Type>(arr: Type[]): Type | undefined {
+  return arr[0];
+}
+// s is of type 'string'
+const s = firstElement(["a", "b", "c"]);
+// n is of type 'number'
+const n = firstElement([1, 2, 3]);
+// u is of type undefined
+const u = firstElement([]);
+```
+
+## inference
+
+We can use multiple type parameters as well. For example, a standalone version of `map` would look like this:
+
+```ts
+function map<Input, Output>(
+  arr: Input[],
+  func: (arg: Input) => Output
+): Output[] {
+  return arr.map(func);
+}
+// Parameter 'n' is of type 'string'
+// 'parsed' is of type 'number[]'
+const parsed = map(["1", "2", "3"], (n) => parseInt(n));
+```
+
+## constraints
+
+limit the kinds of types that a type parameter can accept
+
+```ts
+function longest<Type extends { length: number }>(a: Type, b: Type) {
+  if (a.length >= b.length) {
+    return a;
+  } else {
+    return b;
+  }
+}
+// longerArray is of type 'number[]'
+const longerArray = longest([1, 2], [1, 2, 3]);
+// longerString is of type 'alice' | 'bob'
+const longerString = longest("alice", "bob");
+// Error! Numbers don't have a 'length' property
+const notOK = longest(10, 100);
+```
+
+... continuar leyendo en Guidelines for Writing Good Generic Functions
