@@ -20,6 +20,8 @@
 - copy local file to remote pod in namespace: `kubectl cp <file-src> <some-namespace>/<some-pod>:<file-dest>`
 - port forward: `kubectl port-forward pods/hermes-redis-865c5c9757-npprf 6378:6379 -n hermes`
 - persisten volume claim: `kubectl get pvc`
+- delete pods: `kubectl delete pod $(kubectl get pods | grep "\<chatbot-backend\>" | awk '{print $1}')`
+  - watch: `watch -n 5 "kubectl delete pod $(kubectl get pods | grep "\<chatbot-backend\>" | awk '{print $1}')"`
 
 ### deletes
 

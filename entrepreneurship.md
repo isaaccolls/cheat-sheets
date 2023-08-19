@@ -1,3 +1,8 @@
+- [startup](#startup)
+  - [genchi gembutsu](#genchi-gembutsu)
+  - [producto mínimo viable](#producto-mínimo-viable)
+  - [circuito de feedback de informacion](#circuito-de-feedback-de-informacion)
+
 # startup
 
 una startup es una institución humana diseñada para crear un nuevo producto o servicio bajo condiciones de incertidumbre extrema.

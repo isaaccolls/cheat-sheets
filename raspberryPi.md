@@ -1,3 +1,7 @@
+- [config](#config)
+  - [get hardware revision](#get-hardware-revision)
+- [wifi](#wifi)
+
 # config
 
 - show config menu: `sudo raspi-config`

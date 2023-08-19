@@ -1,3 +1,41 @@
+- [npx version](#npx-version)
+- [new project](#new-project)
+- [prop-types](#prop-types)
+- [Include CSS](#include-css)
+- [Components](#components)
+  - [functional component](#functional-component)
+  - [Class Component](#class-component)
+- [Resources](#resources)
+  - [json-server](#json-server)
+  - [materialize](#materialize)
+  - [material-ui](#material-ui)
+  - [react bootstrap](#react-bootstrap)
+  - [react flexbox grid](#react-flexbox-grid)
+  - [eslint](#eslint)
+- [router](#router)
+  - [component link](#component-link)
+  - [Router](#router-1)
+  - [componentes que administran Router](#componentes-que-administran-router)
+  - [parametros de browserrouter](#parametros-de-browserrouter)
+  - [Route](#route)
+  - [Switch](#switch)
+  - [Link y NavLink](#link-y-navlink)
+  - [Redirect](#redirect)
+  - [withRouter](#withrouter)
+  - [history](#history)
+- [react js best practices](#react-js-best-practices)
+  - [folder structure](#folder-structure)
+  - [functional vs class components](#functional-vs-class-components)
+  - [key indexes](#key-indexes)
+  - [unnecessary divs](#unnecessary-divs)
+  - [component crash testing](#component-crash-testing)
+  - [unnecessary data in state](#unnecessary-data-in-state)
+  - [Understand to handle 'this'](#understand-to-handle-this)
+  - [Use Upper Camel Case Names](#use-upper-camel-case-names)
+  - [Utilize prop-types](#utilize-prop-types)
+- [test](#test)
+- [useful commands](#useful-commands)
+
 # npx version
 
 `npx -v`
@@ -17,7 +55,7 @@ yarn start
 - use
 
 ```js
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 //
 const WeatherTemperature = ({ temperature, weatherState }) => (
   <div>
@@ -43,7 +81,7 @@ export default WeatherTemperature;
 ```js
 const WeatherLocation = () => (
   <div className="weatherLocationCont">
-    <Location city={'Canada'} />
+    <Location city={"Canada"} />
     <WeatherData data={data} />
   </div>
 );
@@ -71,17 +109,17 @@ class WeatherLocation extends Component {
   constructor() {
     super();
     this.state = {
-      city: 'Buenos Aires',
+      city: "Buenos Aires",
       data: data1,
     };
   }
   //
   handleUpdateClick = () => {
     this.setState({
-      city: 'Canada',
+      city: "Canada",
       data: data2,
     });
-    console.log('actualizado');
+    console.log("actualizado");
   };
   //
   render = () => {
@@ -178,9 +216,9 @@ class WeatherLocation extends Component {
 Siempre debe llamar un solo componente, por eso una tecnica es envolver multiples en un contenedor. Debe ser de maxima jerarquia (a nivel de aplicacion, en App.js)
 
 ```js
-import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
 
 class App extends Component {
   renderHome = () => <h1>Home</h1>;
@@ -335,12 +373,12 @@ Use only when necessary
 simple crash test to ensure your component will render without crashing
 
 ```js
-import React from 'react';
-import ReactDom from 'react-dom';
-import App from '.';
+import React from "react";
+import ReactDom from "react-dom";
+import App from ".";
 //
-it('renders without crashing', () => {
-  const div = document.createElement('div');
+it("renders without crashing", () => {
+  const div = document.createElement("div");
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
@@ -356,7 +394,7 @@ Data that is not being directly rendered can cause unnecessary re-renders
 class Message extends Components {
   constructor(props) {
     super(props);
-    this.state = { message: 'Hello' };
+    this.state = { message: "Hello" };
   }
   logMessage = () => {
     const { message } = this.state;

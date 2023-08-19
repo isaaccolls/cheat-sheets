@@ -1,3 +1,12 @@
+- [nvm](#nvm)
+- [node](#node)
+- [npm](#npm)
+  - [manage](#manage)
+- [eslint, prettier husky and lint-staged](#eslint-prettier-husky-and-lint-staged)
+  - [initialize eslint](#initialize-eslint)
+  - [initialize husky](#initialize-husky)
+  - [lint-staged config](#lint-staged-config)
+
 # nvm
 
 - install nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash`

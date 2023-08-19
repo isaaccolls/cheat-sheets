@@ -1,11 +1,8 @@
-<!-- MarkdownTOC autolink="true" levels="1,2" -->
-
 - [emulator](#emulator)
 - [expo-cli](#expo-cli)
   - [new project](#new-project)
 - [navigation](#navigation)
 
-<!-- /MarkdownTOC -->
 # emulator
 
 - emulator list `emulator -list-avds`
@@ -28,6 +25,7 @@ expo start // yarn start!
 # navigation
 
 [https://reactnavigation.org/en/](https://reactnavigation.org/en/)
+
 ```bash
 npm install --save react-navigation
 yarn add react-navigation

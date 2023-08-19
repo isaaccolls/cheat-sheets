@@ -1,8 +1,7 @@
-<!-- MarkdownTOC autolink="true" levels="1,2" -->
-
 - [install](#install)
-
-<!-- /MarkdownTOC -->
+  - [Java](#java)
+  - [maven](#maven)
+  - [spring tools](#spring-tools)
 
 # install
 

@@ -1,6 +1,15 @@
 - [sql](#sql)
-- [postgresql](#postgresql)
-- [mysql](#mysql)
+  - [show tables](#show-tables)
+  - [create a new table](#create-a-new-table)
+  - [fetch data from table](#fetch-data-from-table)
+  - [update data](#update-data)
+  - [delete table](#delete-table)
+  - [delete database](#delete-database)
+  - [joins](#joins)
+  - [find some foreign key](#find-some-foreign-key)
+- [databases motors](#databases-motors)
+  - [postgresql](#postgresql)
+  - [mysql](#mysql)
 
 # sql
 
@@ -94,28 +103,30 @@ CONSTRAINT_NAME like 'FK_e%'
 alter table `template_manager_2`.`section_positions` drop foreign key FK_e718991059d15956316121485fb;
 ```
 
-# postgresql
+# databases motors
+
+## postgresql
 
 - install: `sudo apt-get install postgresql-10 postgresql-contrib`
 - check version: `psql --version` `psql -v`
 - start the database server: `/usr/lib/postgresql/10/bin/pg_ctl -D /var/lib/postgresql/10/main -l logfile start` (check it 🤔)
 - _set password_ to user postgresql `sudo -u postgres psql postgres`
 
-## assign user and password
+### assign user and password
 
 ```bash
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
 sudo -u postgres psql -c "CREATE DATABASE testdb;"
 ```
 
-## start automatically on boot
+### start automatically on boot
 
 ```
 sudo systemctl enable [SERVICE]
 sudo systemctl enable postgresql
 ```
 
-## manage daemon
+### manage daemon
 
 ```bash
 sudo service postgresql start
@@ -123,11 +134,11 @@ sudo service postgresql stop
 sudo service postgresql status
 ```
 
-## pgadmin
+### pgadmin
 
 - install `sudo apt-get install pgadmin3`
 
-# mysql
+## mysql
 
 - install: `apt-get install mysql-client`
 - log in: `mysql -u root -h 127.0.0.1 -p12345678`

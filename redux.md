@@ -1,7 +1,5 @@
-<!-- MarkdownTOC autolink="true" levels="1,2" -->
-
 - [install](#install)
-- [Create store & dispatch action](#create-store--dispatch-action)
+- [Create store \& dispatch action](#create-store--dispatch-action)
   - [Higher-Order Components](#higher-order-components)
   - [Containers](#containers)
   - [Presentational Components](#presentational-components)
@@ -11,7 +9,7 @@
   - [middleware redux-promise](#middleware-redux-promise)
   - [selectors](#selectors)
   - [reselect](#reselect)
-- [Redux, Flux y SSOT \(architecture\)](#redux-flux-y-ssot-architecture)
+- [Redux, Flux y SSOT (architecture)](#redux-flux-y-ssot-architecture)
   - [Conceptos Flux](#conceptos-flux)
   - [Store](#store)
   - [Data Flow](#data-flow)
@@ -20,13 +18,13 @@
 - [accion fetchCustomers](#accion-fetchcustomers)
 - [redux forms](#redux-forms)
 
-<!-- /MarkdownTOC -->
 # install
 
 ```bash
 npm install --save redux
 npm install --save react-redux
 ```
+
 ```bash
 yarn add redux
 yarn add react-redux
@@ -35,18 +33,19 @@ yarn add react-redux
 # Create store & dispatch action
 
 ```js
-import { createStore } from 'redux';
+import { createStore } from "redux";
 
 const store = createStore(() => {},
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-const action = { type: 'setCity', value: city }
+const action = { type: "setCity", value: city };
 store.dispatch(action);
 ```
 
 ## Higher-Order Components
 
-React Redux's *connect*
+React Redux's _connect_
+
 ```js
 const ConnectedComment = connect(commentSelector, commentActions)(CommentList);
 ```
@@ -62,23 +61,29 @@ No llevan logica
 ## reducers
 
 Deben ser Pure functions, No alteran estado!
+
 - don't do
+
 ```js
-state.prop = 'nuevo valor'
+state.prop = "nuevo valor";
 ```
+
 - hacer copia mediante spread operator!
+
 ```js
 { ...state, prop: 'nuevo valor' }
 ```
-  - siempre debe retornar un state
+
+- siempre debe retornar un state
 
 ## connect
 
 ```js
-connect( 1, 2 )(Comp)
+connect(1, 2)(Comp);
 ```
-1. `MapStateToProps (values)`: Tiene como parametros el state de la aplicacion, retorna un objeto con las propiedades a utilizar para ser inyectadas por *connect* dentro del componente como Props, es decir se pueden acceder a estas con `this.props`
-2. `MapDispatchToProps (func)`: Espera que le retorne un objeto con funciones. Estas funciones *connect* las inyecta como propiedades dentro del componente.
+
+1. `MapStateToProps (values)`: Tiene como parametros el state de la aplicacion, retorna un objeto con las propiedades a utilizar para ser inyectadas por _connect_ dentro del componente como Props, es decir se pueden acceder a estas con `this.props`
+2. `MapDispatchToProps (func)`: Espera que le retorne un objeto con funciones. Estas funciones _connect_ las inyecta como propiedades dentro del componente.
 
 ## middleware Thunk
 
@@ -101,8 +106,9 @@ Aumentan su importancia al momento de utilizar filtros para Arrays.
 
 `npm install --save reselect`
 `yarn add reselect`
+
 ```js
-createSelector(...inputSelectors | [inputSelectors], resultFunc)
+createSelector(...(inputSelectors | [inputSelectors]), resultFunc);
 ```
 
 # Redux, Flux y SSOT (architecture)
@@ -117,7 +123,7 @@ createSelector(...inputSelectors | [inputSelectors], resultFunc)
 ## Store
 
 Los datos en el store solo deben modificarse en respuesta a una action
-  
+
 ## Data Flow
 
 Flujo de datos estrictamente unidireccional
@@ -125,6 +131,7 @@ Flujo de datos estrictamente unidireccional
 ## Single Source Of Truth: SSOT
 
 Un unico Store
+
 ```
       +invocado desde container o
       |de una peticion http

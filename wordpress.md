@@ -1,5 +1,3 @@
-<!-- MarkdownTOC autolink="true" levels="1,2" -->
-
 - [set pages](#set-pages)
 - [upload theme manually](#upload-theme-manually)
 - [importar demo!](#importar-demo)
@@ -19,10 +17,9 @@
 - [backup plugin](#backup-plugin)
   - [create backup](#create-backup)
   - [import backup](#import-backup)
-- [pendiente con los links de: 🤓](#pendiente-con-los-links-de-%F0%9F%A4%93)
+- [pendiente con los links de: 🤓](#pendiente-con-los-links-de-)
 - [online store](#online-store)
 
-<!-- /MarkdownTOC -->
 # set pages
 
 - Ajustes de los enlaces permanentes
@@ -42,9 +39,9 @@
 - visitar el sitio
 - click en perzonalizar
 - click Ajustes de la página de inicio
-- select __Una página estática__
-- choose __Página de inicio__
-- click __Publicar__
+- select **Una página estática**
+- choose **Página de inicio**
+- click **Publicar**
 
 # edit logo
 
@@ -66,8 +63,8 @@ Salient->Accent Colors
 # navigation menu
 
 - Apariencia->menus
-    - footer menu
-    - main nav
+  - footer menu
+  - main nav
 
 # blog data
 
@@ -79,13 +76,13 @@ Salient->Accent Colors
 
 # contact form
 
-- install plugin: __Contact Form 7__
+- install plugin: **Contact Form 7**
 - activar 🙄
 - Go to: _contacto_
-- copy the __Shortcode__
+- copy the **Shortcode**
 - add new Row
 - add text block
-- paste the __Shortcode__
+- paste the **Shortcode**
 
 # edit title and favicon
 
@@ -114,18 +111,18 @@ Salient->Accent Colors
 
 # Jetpack by WordPress.com
 
-- install plugin __Jetpack__
+- install plugin **Jetpack**
 - activar
 - create account
 - activate
-    - lazy load images
-    - downtime monitoring
-    - prevent and block malicius login attempts
-    - enable site acelerator
+  - lazy load images
+  - downtime monitoring
+  - prevent and block malicius login attempts
+  - enable site acelerator
 
 # backup plugin
 
-- install plugin __Duplicator – WordPress Migration Plugin__
+- install plugin **Duplicator – WordPress Migration Plugin**
 - activar
 
 ## create backup

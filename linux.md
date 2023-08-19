@@ -3,21 +3,17 @@
   - [linux kernel version](#linux-kernel-version)
   - [terminator](#terminator)
   - [youtube-dl](#youtube-dl)
-  - [spotdl](#spotdl)
   - [compress](#compress)
 - [permissions](#permissions)
 - [install custom apps](#install-custom-apps)
-- [hibernate](#hibernate)
 - [backup](#backup)
   - [configs](#configs)
-  - [pictures](#pictures)
   - [documents](#documents)
-  - [music](#music)
   - [projects](#projects)
   - [dark bookmarks](#dark-bookmarks)
 - [after install](#after-install)
   - [install](#install)
-  - [configs](#configs-1)
+  - [themes](#themes)
   - [run script when logging](#run-script-when-logging)
   - [run script when usb plugged in](#run-script-when-usb-plugged-in)
 
@@ -26,7 +22,6 @@
 - desktop entry location `.local/share/applications`
 - polychromatic profiles located: `/home/isaac/.config/polychromatic/profiles`
 - wallpapers `/usr/share/backgrounds`
-- change gnome screenhots default save directory: ~~`gsettings set org.gnome.gnome-screenshot auto-save-directory "${HOME}/Pictures/Screenshots"`~~
 
 # commands / shortcuts / apps
 
@@ -131,11 +126,6 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 - download mp3: `youtube-dl --extract-audio --audio-format mp3 -f best https://www.youtube.com/watch?v=j-_Amo943XE`
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) sudo apt-get install yt-dlp
 
-## spotdl
-
-- install spotdl: `pip3 install spotdl`
-- donwload playlist: `spotdl [playlistUrl]`
-
 ## compress
 
 ### tar
@@ -183,16 +173,6 @@ Icon=/path/to/yourapp.png
 Categories=Development;
 ```
 
-# hibernate
-
-1. install pm-utils: `sudo apt-get install pm-utils`
-2. `cat /sys/power/state` should see `freeze mem disk`
-3. `grep swap /etc/fstab`
-4. add `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash resume=UUID=YOUR_VALUE"` on grub `/etc/default/grub`
-5. update grub `sudo update-grub`
-   1. in case of problems `sudo grub-install`
-6. test it `sudo systemctl hibernate` or `pm-hibernate`
-
 # backup
 
 ## configs
@@ -200,20 +180,10 @@ Categories=Development;
 - terminator config `cp -fv .config/terminator/config /media/isaac/Backup/configs/terminator`
 - ssh keys `cp -rfv .ssh /media/isaac/Backup/configs/ssh`
 - zsh config `cp -fv .zshrc /media/isaac/Backup/configs/zshrc`
-- aws `cp -rfv .aws /media/isaac/Backup/configs/aws`
-- kube `cp -rfv .kube /media/isaac/Backup/configs/kube`
-- grub `cp -v /etc/default/grub /media/isaac/Backup/configs/grub`
-
-## pictures
 
 ## documents
 
 - credentials `rm -rfv /media/isaac/Backup/xxx` `cp -rfv ~/xxx /media/isaac/Backup/xxx`
-- signature.html `rm -rfv /media/isaac/Backup/Documents/signature.html` `cp -rfv ~/Documents/signature.html /media/isaac/Backup/Documents`
-
-## music
-
-`rm -rfv /media/isaac/Backup/Music/sheets` `cp -rfv ~/Music/sheets /media/isaac/Backup/Music`
 
 ## projects
 
@@ -228,17 +198,12 @@ Categories=Development;
 ## install
 
 - git: `sudo apt-get git`
-- chrome
-- slack
+- opera
 - postman
-- robomongo
 - dbeaver
-- gparted: `sudo apt-get install gparted`
 - torrent client: `sudo apt-get install transmission`
 - operator mono _font_
 - vscode
-- spotify and musixmatch
-- multimedia codecs: `sudo apt install ubuntu-restricted-extras libavcodec-extra libdvd-pkg`
 - vlc `sudo apt install vlc`
 - steam
 - nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash` and terminal restart (nvm plugin 😉)
@@ -279,24 +244,6 @@ install: `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tool
 - zsh-autosuggestions: `git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
 - update: in `~/.zshrc` file replace update plugins `plugins=(git virtualenv nvm zsh-syntax-highlighting zsh-autosuggestions)`
 
-### tweaks
-
-```bash
-sudo apt install software-properties-common
-sudo add-apt-repository ppa:philip.scott/pantheon-tweaks
-sudo apt update
-sudo apt install pantheon-tweaks
-```
-
-### nvidia
-
-- check nvidia `nvidia-smi`
-- ubuntu-drivers devices (look for _recommended_)
-- if good recommendation `sudo ubuntu-drivers autoinstall`
-  - else `sudo apt install nvidia-driver-460`
-- To check which card is being used right now: `prime-select query`
-- remove all 💩: `sudo apt-get --purge -y remove 'nvidia*'`
-
 ### open razer
 
 ```bash
@@ -319,53 +266,16 @@ sudo gpasswd -a $USER plugdev
 1. `sudo apt-get install tuxguitar tuxguitar-alsa tuxguitar-jsa tuxguitar-oss`
 2. go to Tools -> Settings -> Sound and select _Gervill_ as Midi Port.
 
-## configs
+## themes
 
-- workspace should contain all monitors: `gsettings set org.gnome.mutter workspaces-only-on-primary false`
 - theme, cursor and icons: check for something cool on [pling](https://www.pling.com/p/1403328/)
   - extract themes to `~/.themes/`
   - extract cursor and icons to `~/.icons/` or `~/usr/share/icons/` for system side installation
-
-### tweaks
-
-- disable single-click (on settings -> tweaks -> files)
-- disable natural copy-paste in terminal (Tweaks and in the Terminal tab)
-- add minimize button (os x)
-
-### dock
-
-1. `hold`ctrl + right-click` over _the dock_
-2. then `click` preferences (transparent)
-
-### grub
-
-1. copy grub razer theme `sudo cp -rf /media/isaac/Backup/configs/grub-theme /boot/grub/themes/razer`
-2. edit `/etc/default/grub`
-
-```
-GRUB_CMDLINE_LINUX_DEFAULT="button.lid_init_state=open intel_idle.max_cstate=4"
-# gfx mode for RBS 4k
-GRUB_GFXMODE="3840x2160-32"
-GRUB_GFXPAYLOAD_LINUX="3840x2160-32"
-GRUB_THEME="/boot/grub/themes/razer/theme.txt"
-```
-
-3. set it up: `sudo update-grub`
 
 ### sport camera as webcam
 
 - reconfigure the uvcvideo `sudo rmmod uvcvideo` `sudo modprobe uvcvideo quirks=2` (Note you can add this parameter to /etc/modules or /etc/modprobe.d/)
 - debug `sudo apt-get install v4l-utils` `v4l2-ctl --list-devices`
-
-### fix i915 firmware
-
-```bash
-cd /tmp
-git clone git://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git
-cd linux-firmware/
-cp i915/* /lib/firmware/i915/
-update-initramfs -u
-```
 
 ## run script when logging
 
@@ -373,12 +283,14 @@ update-initramfs -u
 - all users `/etc/xdg/autostart/my_script.desktop`
 
 ```
+
 [Desktop Entry]
 Type=Application
 Name=openrazer start
 Exec=python3 /home/isaac/Projects/openrazer/set.py 50
 Icon=system-run
 X-GNOME-Autostart-enabled=true
+
 ```
 
 ## run script when usb plugged in

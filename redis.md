@@ -1,3 +1,5 @@
+- [redis-cli basic commands](#redis-cli-basic-commands)
+
 # redis-cli basic commands
 
 - install client: `sudo apt-get install redis-tools`
