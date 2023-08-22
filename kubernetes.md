@@ -22,6 +22,7 @@
 - persisten volume claim: `kubectl get pvc`
 - delete pods: `kubectl delete pod $(kubectl get pods | grep "\<chatbot-backend\>" | awk '{print $1}')`
   - watch: `watch -n 5 "kubectl delete pod $(kubectl get pods | grep "\<chatbot-backend\>" | awk '{print $1}')"`
+- display pod usage: `kubectl top pod [pod_name]`
 
 ### deletes
 
