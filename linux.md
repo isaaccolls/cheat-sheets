@@ -4,6 +4,7 @@
   - [terminator](#terminator)
   - [youtube-dl](#youtube-dl)
   - [compress](#compress)
+  - [flatpak](#flatpak)
 - [permissions](#permissions)
 - [install custom apps](#install-custom-apps)
 - [backup](#backup)
@@ -14,6 +15,7 @@
 - [after install](#after-install)
   - [install](#install)
   - [themes](#themes)
+  - [sport camera as webcam](#sport-camera-as-webcam)
   - [run script when logging](#run-script-when-logging)
   - [run script when usb plugged in](#run-script-when-usb-plugged-in)
 
@@ -51,6 +53,7 @@
   - purge: `sudo apt purge <package-name>`
 - cleanup: `sudo apt-get clean && sudo apt-get autoremove && sudo apt-get autoclean`
 - clear logs: `truncate -s 0 /var/log/syslog`
+- fix opera bug: `cp /usr/share/discord/libffmpeg.so /home/isaac/.local/share/flatpak/app/com.opera.Opera/x86_64/stable/022db8a5595c2fff27f44a7a28f2611598632c277d3f72e1731399d1c9cbbb25/files/opera`
 
 ## linux kernel version
 
@@ -142,6 +145,12 @@ gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
 
 - zip `zip file.zip /dir/file`
 - unzip `unzip file.zip`
+
+## flatpak
+
+- list installed apps: `flatpak list`
+- show app info: `flatpak info [app_name]`
+  - show app location: `flatpak info --show-location [app_name]`
 
 # permissions
 
@@ -272,7 +281,7 @@ sudo gpasswd -a $USER plugdev
   - extract themes to `~/.themes/`
   - extract cursor and icons to `~/.icons/` or `~/usr/share/icons/` for system side installation
 
-### sport camera as webcam
+## sport camera as webcam
 
 - reconfigure the uvcvideo `sudo rmmod uvcvideo` `sudo modprobe uvcvideo quirks=2` (Note you can add this parameter to /etc/modules or /etc/modprobe.d/)
 - debug `sudo apt-get install v4l-utils` `v4l2-ctl --list-devices`
