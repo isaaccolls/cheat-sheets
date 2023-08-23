@@ -16,6 +16,7 @@
   - [install](#install)
   - [themes](#themes)
   - [sport camera as webcam](#sport-camera-as-webcam)
+  - [fix opera bug](#fix-opera-bug)
   - [run script when logging](#run-script-when-logging)
   - [run script when usb plugged in](#run-script-when-usb-plugged-in)
 
@@ -53,7 +54,6 @@
   - purge: `sudo apt purge <package-name>`
 - cleanup: `sudo apt-get clean && sudo apt-get autoremove && sudo apt-get autoclean`
 - clear logs: `truncate -s 0 /var/log/syslog`
-- fix opera bug: `cp /usr/share/discord/libffmpeg.so /home/isaac/.local/share/flatpak/app/com.opera.Opera/x86_64/stable/022db8a5595c2fff27f44a7a28f2611598632c277d3f72e1731399d1c9cbbb25/files/opera`
 
 ## linux kernel version
 
@@ -285,6 +285,19 @@ sudo gpasswd -a $USER plugdev
 
 - reconfigure the uvcvideo `sudo rmmod uvcvideo` `sudo modprobe uvcvideo quirks=2` (Note you can add this parameter to /etc/modules or /etc/modprobe.d/)
 - debug `sudo apt-get install v4l-utils` `v4l2-ctl --list-devices`
+
+## fix opera bug
+
+1.  Find the chromium version your browser is based on
+    1.  Goto `opera://about`
+    1.  then `Ctrl+F` to find `'Chrome'` in the user-agent
+    1.  version number is Chrome/`XX`.other_numbers
+1.  Download libffmpeg.so
+    - [option 1](https://onedrive.live.com/?authkey=%21AC7ddalBsUiWsUE&id=75D48EF8D3750510%21234&cid=75D48EF8D3750510) and get your file based on your chromium version
+    - [option 2](http://security.ubuntu.com/ubuntu/pool/universe/c/chromium-browser/) and download the `chromium-codecs-ffmpeg-extra_XX` where `XX` is your chromium version
+    - [resource 1](https://www.reddit.com/r/operabrowser/wiki/opera/linux_libffmpeg_config)
+    - [resource 2](https://gist.github.com/hauke96/5d808ff06e695c752783f4054232a4a9)
+1.  Copy libffmpeg.so in the browser folder: `cp ~/Downloads/libffmpeg.so /home/isaac/.local/share/flatpak/app/com.opera.Opera/x86_64/stable/022db8a5595c2fff27f44a7a28f2611598632c277d3f72e1731399d1c9cbbb25/files/opera`
 
 ## run script when logging
 
