@@ -309,7 +309,7 @@ sudo gpasswd -a $USER plugdev
 [Desktop Entry]
 Type=Application
 Name=openrazer start
-Exec=python3 /home/isaac/Projects/openrazer/set.py 50
+Exec=python3 /home/isaac/Projects/openrazer/set.py m
 Icon=system-run
 X-GNOME-Autostart-enabled=true
 
