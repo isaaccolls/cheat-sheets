@@ -214,6 +214,7 @@ Categories=Development;
 - steam
 - nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash` and terminal restart (nvm plugin 😉)
 - terminator: `sudo apt-get install terminator`
+- tweaks: `sudo apt install gnome-tweaks`
 
 ### improve Laptop battery life
 
