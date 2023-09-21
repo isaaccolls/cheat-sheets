@@ -116,10 +116,7 @@ title_hide_sizetext = True
 
 ### set as default
 
-```bash
-gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
-gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
-```
+run `sudo update-alternatives --config x-terminal-emulator`
 
 ## youtube-dl
 
