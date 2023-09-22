@@ -1,3 +1,7 @@
+# install
+
+`npm i -g nx`
+
 # nest
 
 ## module
