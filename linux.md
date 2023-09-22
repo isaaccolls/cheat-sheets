@@ -116,10 +116,7 @@ title_hide_sizetext = True
 
 ### set as default
 
-```bash
-gsettings set org.gnome.desktop.default-applications.terminal exec /usr/bin/terminator
-gsettings set org.gnome.desktop.default-applications.terminal exec-arg "-x"
-```
+run `sudo update-alternatives --config x-terminal-emulator`
 
 ## youtube-dl
 
@@ -217,6 +214,7 @@ Categories=Development;
 - steam
 - nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash` and terminal restart (nvm plugin 😉)
 - terminator: `sudo apt-get install terminator`
+- tweaks: `sudo apt install gnome-tweaks`
 
 ### improve Laptop battery life
 
