@@ -216,14 +216,6 @@ Categories=Development;
 - terminator: `sudo apt-get install terminator`
 - tweaks: `sudo apt install gnome-tweaks`
 
-### improve Laptop battery life
-
-```bash
-sudo apt-get install tlp tlp-rdw
-sudo systemctl enable tlp
-sudo tlp-stat -s
-```
-
 ### zsh
 
 ```bash
