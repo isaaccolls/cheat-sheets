@@ -186,21 +186,21 @@ Categories=Development;
 
 ## configs
 
-- terminator config `cp -fv .config/terminator/config /media/isaac/Backup/configs/terminator`
-- ssh keys `cp -rfv .ssh /media/isaac/Backup/configs/ssh`
-- zsh config `cp -fv .zshrc /media/isaac/Backup/configs/zshrc`
+- terminator config `cp -fv .config/terminator/config /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/configs/terminator`
+- ssh keys `cp -rfv .ssh /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/configs/ssh`
+- zsh config `cp -fv .zshrc /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/configs/zshrc`
 
 ## documents
 
-- credentials `rm -rfv /media/isaac/Backup/xxx` `cp -rfv ~/xxx /media/isaac/Backup/xxx`
+- credentials `rm -rfv /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/xxx` `cp -rfv ~/xxx /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/xxx`
 
 ## projects
 
-`rm -rf /media/isaac/Backup/Projects` `mkdir /media/isaac/Backup/Projects` `rsync -av --exclude 'node_modules' ~/Projects/ /media/isaac/Backup/Projects`
+`rm -rf /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/Projects` `mkdir /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/Projects` `rsync -av --exclude 'node_modules' ~/Projects/ /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/Projects`
 
 ## dark bookmarks
 
-`cp /opt/tor-browser_en-US/Browser/Desktop/bookmarks.json /media/isaac/Backup/configs/`
+`cp /opt/tor-browser_en-US/Browser/Desktop/bookmarks.json /media/isaac/7493cdfd-c3b3-4bfb-aa03-6bb3af4e4069/isaac/configs/`
 
 # after install
 
@@ -274,6 +274,10 @@ sudo gpasswd -a $USER plugdev
 
 1. `sudo apt-get install tuxguitar tuxguitar-alsa tuxguitar-jsa tuxguitar-oss`
 2. go to Tools -> Settings -> Sound and select _Gervill_ as Midi Port.
+
+### nvidia
+
+monitor: `sudo apt install nvtop`
 
 ## themes
 
