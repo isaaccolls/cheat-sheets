@@ -79,8 +79,9 @@
 - Broadcast group `Alt+G`
 - Broadcast off `Alt+O`
 - fix twice command error:
-  - `sudo mv /usr/local/bin/ibus-daemon /usr/local/bin/ibus-daemon.bak`
-  - `env --unset=GTK_IM_MODULE terminator`
+  1. find terminator location: `which terminator`
+  2. edit terminator: `vim /usr/bin/terminator`
+  3. after the "import" lines at top, insert: `os.environ['DBUS_SESSION_BUS_ADDRESS'] = ''`
 
 ### custom config
 
