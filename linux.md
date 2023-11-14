@@ -141,7 +141,7 @@ run `sudo update-alternatives --config x-terminal-emulator`
 
 ### zip
 
-- zip `zip file.zip /dir/file`
+- zip `zip -r file.zip /dir/file`
 - unzip `unzip file.zip`
 
 ## flatpak
