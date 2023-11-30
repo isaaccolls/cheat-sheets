@@ -1,5 +1,12 @@
+- [mirror an Android device to a PC](#mirror-an-android-device-to-a-pc)
 - [abd](#abd)
 - [avd](#avd)
+
+# mirror an Android device to a PC
+
+1. must have `developer options > USB debugging` **enabled**
+2. install `sudo apt install scrcpy`
+3. run `scrcpy`
 
 # abd
 
