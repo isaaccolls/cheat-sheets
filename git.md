@@ -40,21 +40,14 @@ git config user.email "info@nanhekumar.com"
 
 # Basic commands
 
-- Crear repositorio local: `git init`
-- Agrega el archivo al staging area(el limbo) -A nos agrega todos los archivos `git add [archivo]`
-- Nos devolvemos un paso
-
-```bash
-git rm --cached
-git rm --cached <file>
-git rm --cached <diretory/*>
-```
-
-- Elimina el archivo por completo `git rm -f [file]`
-- Que no haga nada, solo para ver en donde se encuentran los archivos y que podemos hacer con él `git add -n [file]`
-- Para llevar del Staging Area al repository `git commit -m ["mensaje"]`
-- Concatena nuevos cambios al utimo commit realizado `git commit -amend`
-- Muestra la historia de todos los commits que hemos realizados `git log`
+- crear repositorio local: `git init`
+- agrega el archivo al staging area(el limbo) -A nos agrega todos los archivos `git add [archivo]`
+  - remover archivo del staging area: `git reset HEAD <file>`
+- elimina el archivo por completo `git rm -f [file]`
+- que no haga nada, solo para ver en donde se encuentran los archivos y que podemos hacer con él `git add -n [file]`
+- para llevar del Staging Area al repository `git commit -m ["mensaje"]`
+- concatena nuevos cambios al utimo commit realizado `git commit -amend`
+- muestra la historia de todos los commits que hemos realizados `git log`
 - stage only deleted files with git add `git ls-files --deleted | xargs git add`
 - see the files changed in a commit `git show --name-only [sha]`
 - change a remote git repository `git remote set-url origin git@your.git.repo.example.com:user/repository2.git`
