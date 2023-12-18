@@ -1,4 +1,3 @@
-- [Get Docker CE for Ubuntu](#get-docker-ce-for-ubuntu)
 - [manage docker](#manage-docker)
 - [Uninstall Docker CE](#uninstall-docker-ce)
 - [images](#images)
@@ -49,24 +48,17 @@
   - [download image](#download-image)
   - [share registry](#share-registry)
 
-# Get Docker CE for Ubuntu
-
-- Just like docs 🤓, add the keys, repository, etc.
-- install `sudo apt-get update && sudo apt-get install docker-ce`
-- check version `docker --version`
-- add user to docker group `sudo usermod -aG docker [USUARIO] && sudo init 6`
-- Verify that Docker CE is installed correctly by running: `docker run hello-world`
-
 # manage docker
 
 - status: `sudo systemctl status docker`
-- start: `sudo systemctl start docker`
+  - check docker services: `systemctl list-unit-files | grep -i docker`
 - disable on startup: `sudo systemctl disable docker`
   - alternative:
     - service: `sudo systemctl disable docker.service`
     - socket: `sudo systemctl disable docker.socket`
   - enable on startup: `sudo systemctl enable docker`
-- check docker services: `systemctl list-unit-files | grep -i docker`
+- start: `sudo systemctl start docker`
+- stop: `sudo systemctl stop docker`
 - clean: `docker system prune`
 
 # Uninstall Docker CE
@@ -78,7 +70,7 @@
 
 ## official images
 
-- download from <https://hub.docker.com/>
+- download from [docker hub](https://hub.docker.com/)
 - for example `docker pull mysql`
 
 ## check images
