@@ -15,7 +15,7 @@
 
 ## controller
 
-- generate controller: `nx generate @nrwl/nest:controller --name Health --project [some-cool-project]`
+- generate controller: `nx generate @nrwl/nest:controller --name [some-cool-name] --project [some-cool-project]`
 
 ## service
 
