@@ -13,6 +13,10 @@
 - help: `nx g module --help`
 - generate module: `nx generate @nrwl/nest:module --name [some-cool-name] --project [some-cool-project]`
 
+## controller
+
+- generate controller: `nx generate @nrwl/nest:controller --name Health --project [some-cool-project]`
+
 ## service
 
 - generate service: `nx generate @nrwl/nest:service --name status --project db-migrator`
