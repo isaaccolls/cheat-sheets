@@ -4,10 +4,18 @@
 
 # nest
 
+## app
+
+- generate app: `nx generate @nrwl/nest:app my-nest-app`
+
 ## module
 
 - help: `nx g module --help`
 - generate module: `nx generate @nrwl/nest:module --name [some-cool-name] --project [some-cool-project]`
+
+## controller
+
+- generate controller: `nx generate @nrwl/nest:controller --name [some-cool-name] --project [some-cool-project]`
 
 ## service
 
