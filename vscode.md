@@ -1,5 +1,6 @@
 - [short cuts](#short-cuts)
 - [settings](#settings)
+- [extensions](#extensions)
 
 # short cuts
 
@@ -152,4 +153,63 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   }
 }
+```
+
+# extensions
+
+backup: `code --list-extensions | xargs -L 1 echo code --install-extension`
+
+```sh
+code --list-extensions | xargs -L 1 echo code --install-extension
+code --install-extension ahmadalli.vscode-nginx-conf
+code --install-extension atdushi.conky
+code --install-extension bmewburn.vscode-intelephense-client
+code --install-extension bradymholt.pgformatter
+code --install-extension CodeStream.codestream
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension deerawan.vscode-faker
+code --install-extension dracula-theme.theme-dracula
+code --install-extension eamodio.gitlens
+code --install-extension esbenp.prettier-vscode
+code --install-extension firsttris.vscode-jest-runner
+code --install-extension foxundermoon.shell-format
+code --install-extension genieai.chatgpt-vscode
+code --install-extension gitduck.code-streaming
+code --install-extension GitHub.copilot
+code --install-extension GitHub.copilot-chat
+code --install-extension hashicorp.terraform
+code --install-extension hediet.vscode-drawio
+code --install-extension junstyle.php-cs-fixer
+code --install-extension mechatroner.rainbow-csv
+code --install-extension mikestead.dotenv
+code --install-extension mintlify.document
+code --install-extension mrmlnc.vscode-apache
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-python.autopep8
+code --install-extension ms-python.isort
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-toolsai.jupyter-keymap
+code --install-extension ms-toolsai.jupyter-renderers
+code --install-extension ms-toolsai.vscode-jupyter-cell-tags
+code --install-extension ms-toolsai.vscode-jupyter-slideshow
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension ms-vscode-remote.remote-ssh-edit
+code --install-extension mtxr.sqltools
+code --install-extension nhoizey.gremlins
+code --install-extension nrwl.angular-console
+code --install-extension octref.vetur
+code --install-extension oderwat.indent-rainbow
+code --install-extension Perkovec.emoji
+code --install-extension Postman.postman-for-vscode
+code --install-extension raynigon.nginx-formatter
+code --install-extension redhat.vscode-yaml
+code --install-extension SonarSource.sonarlint-vscode
+code --install-extension Tobermory.es6-string-html
+code --install-extension tsandall.opa
+code --install-extension unifiedjs.vscode-mdx
+code --install-extension vscode-icons-team.vscode-icons
+code --install-extension yzhang.markdown-all-in-one
 ```
