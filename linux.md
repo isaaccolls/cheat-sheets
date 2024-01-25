@@ -54,6 +54,9 @@
   - purge: `sudo apt purge <package-name>`
 - cleanup: `sudo apt-get clean && sudo apt-get autoremove && sudo apt-get autoclean`
 - clear logs: `truncate -s 0 /var/log/syslog`
+- paquetes:
+  - actualizar: `sudo apt-get update`
+  - actualizar: `sudo apt-get full-upgrade`
 
 ## linux kernel version
 
