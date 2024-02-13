@@ -84,7 +84,7 @@
   "markdown.extension.toc.levels": "1..2",
   "security.workspace.trust.untrustedFiles": "open",
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1704933751917,
+  "php-cs-fixer.lastDownload": 1707424473136,
   "sonarlint.ls.javaHome": "/usr/lib/jvm/jdk-21-oracle-x64",
   "opa.path": "/home/isaac/opa",
   "diffEditor.ignoreTrimWhitespace": false,
@@ -132,7 +132,8 @@
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
   "[sql]": {
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+    "editor.defaultFormatter": "bradymholt.pgformatter"
   },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -151,6 +152,9 @@
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dbml]": {
+    "editor.defaultFormatter": "matt-meyers.vscode-dbml"
   }
 }
 ```
