@@ -1,8 +1,5 @@
 - [zen](#zen)
 - [simple http server](#simple-http-server)
-- [install](#install)
-  - [upgrade](#upgrade)
-- [pip](#pip)
 - [virtual environment](#virtual-environment)
 - [list](#list)
 
@@ -15,36 +12,21 @@
 - python 2: `python -m SimpleHTTPServer 8000`
 - python 3: `python3 -m http.server 8000`
 
-# install
-
-## upgrade
-
-1. `sudo apt update -y`
-2. `sudo apt install python3.8`
-3. `sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1`
-4. `sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2`
-5. `sudo update-alternatives --config python3`
-
-# pip
-
-- install: `sudo apt install python3-venv python3-pip`
-- use: `pip3 install simplejson`
-- installed packages: `pip3 freeze`
-- create _requirements.txt_: `pip3 freeze > requirements.txt`
-- install from _requirements.txt_: `pip3 install -r requirements.txt`
-- uninstall: `pip3 uninstall [package-name]`
-- version`pip3 --version`
-
 # virtual environment
 
-- install: `pip3 install virtualenv`
-- Create Virtual Environment:
-  - Find the Python 3 binary file location using which command: `which python3`
-- create virtual environment: `python3 -m venv [420]` or `virtualenv -p /usr/bin/python3 [420]`
-- activate: `source 420/bin/activate`
-  - Check the correct Python version with: `python -V`
-- Any package that you install using pip is now placed in the virtual environments project folder: `pip3 install <module>`
-- Deactivate virtualenv Environment: `deactivate`
+- install: `sudo apt install python3-venv`
+- manage project
+  - create a directory project and access it: `mkdir my_project` and `cd my_project`
+  - create a virtual environment: `python3 -m venv venv`
+  - activate the virtual environment: `source venv/bin/activate`
+  - run script with: `python hello_world.py`
+  - exit the virtual environment: `deactivate`
+- manage packages
+  - install some package: `pip install colorama`
+  - uninstall: `pip3 uninstall [package-name]`
+  - show installed packages: `pip3 freeze`
+  - create _requirements.txt_: `pip3 freeze > requirements.txt`
+  - install from _requirements.txt_: `pip3 install -r requirements.txt`
 
 # list
 
