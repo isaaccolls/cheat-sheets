@@ -219,6 +219,7 @@ Categories=Development;
 - nvm `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash` and terminal restart (nvm plugin 😉)
 - terminator: `sudo apt-get install terminator`
 - tweaks: `sudo apt install gnome-tweaks`
+- heic support: `sudo apt install heif-gdk-pixbuf` and `sudo apt-get install heif-thumbnailer`
 
 ### zsh
 
