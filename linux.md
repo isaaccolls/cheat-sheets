@@ -1,5 +1,6 @@
 - [locations](#locations)
 - [commands / shortcuts / apps](#commands--shortcuts--apps)
+  - [samba](#samba)
   - [linux kernel version](#linux-kernel-version)
   - [terminator](#terminator)
   - [youtube-dl](#youtube-dl)
@@ -57,6 +58,11 @@
 - paquetes:
   - actualizar: `sudo apt-get update`
   - actualizar: `sudo apt-get full-upgrade`
+
+## samba
+
+- mount: `sudo mount.cifs //192.168.6.211/backup /home/isaac/Downloads/montaje -o username=isaaccolls,password=cenco`
+- unmount: `sudo umount /home/isaac/Downloads/montaje`
 
 ## linux kernel version
 
