@@ -58,6 +58,9 @@
 - paquetes:
   - actualizar: `sudo apt-get update`
   - actualizar: `sudo apt-get full-upgrade`
+- scan for Wi-Fi networks signal strength
+  1. Install Necessary Tools: `sudo apt install iw`
+  2. Scan for Wi-Fi Networks `sudo iwlist wlan0 scan | grep -E 'SSID|Signal level'`
 
 ## samba
 
