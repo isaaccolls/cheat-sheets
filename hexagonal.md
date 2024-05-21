@@ -14,6 +14,9 @@
   - [Servicios de Aplicación](#servicios-de-aplicación)
   - [Servicios de dominio](#servicios-de-dominio)
   - [Diferencias entre usar Servicios de Dominio y de Infraestructura desde Aplicación](#diferencias-entre-usar-servicios-de-dominio-y-de-infraestructura-desde-aplicación)
+- [Value Objects](#value-objects)
+- [Named Constructors en entidades y registro de eventos de dominio](#named-constructors-en-entidades-y-registro-de-eventos-de-dominio)
+  - [Publicación de eventos de dominio](#publicación-de-eventos-de-dominio)
 
 # Capas de la Arquitectura Hexagonal
 
@@ -243,3 +246,111 @@ Es más, nos interesará que nuestros tests pasen por el servicio de dominio a l
 Con lo cuál, los servicios de dominio **no tendrán una interface por encima** ya que es totalmente innecesaria. No aportaría más que complejidad a través del nivel de indirección adicional que suponen en nuestro sistema.
 
 Algo que es discutible es si la lógica de instanciación de ese Servicio de Dominio le pertenece al Servicio de Aplicación tal y como mostramos en el vídeo o, a pesar de no tener una interface por encima, lo inyectamos ya instanciado al Servicio de Aplicación. Esto lo dejamos al gusto del consumidor ya que cada alternativa tiene sus pros y sus contras como comentamos en el vídeo 🙂
+
+# Value Objects
+
+Los Value Objects (VO) u “Objetos de Valor”, no son más que clases que se identifican por el valor que representan.
+
+Por ejemplo, cuando hablamos de nuestras entidades de dominio como puede ser Video, éstas tienen un atributo que será el identificador. Por lo tanto, si cambia el título del vídeo, seguimos entendiendo que se trata del mismo vídeo ya que tiene el mismo identificador.
+
+En cambio, los conceptos de dominio que modelemos usando el patrón VO, serán elementos como por ejemplo la URL de los vídeos. Con lo cuál, si cambia su valor, ya no representará el mismo concepto. Por esto decimos que se identifican por el valor que contienen.
+
+```php
+// Extracto de: https://github.com/CodelyTV/cqrs-ddd-php-example/blob/master/src/Context/Video/Module/Video/Domain/VideoUrl.php
+final class VideoUrl extends StringValueObject
+{
+    public function __construct(string $value)
+    {
+        $this->guardValidUrl($value); // ℹ️ Validación en el momento de instanciación. No permitimos tener un VideoUrl con un null por ejemplo.
+
+        parent::__construct($value);
+    }
+
+    private function guardValidUrl(string $url)
+    {
+        if (false === filter_var($url, FILTER_VALIDATE_URL)) {
+            throw new \InvalidArgumentException(sprintf('The url <%s> is not well formatted', $url));
+        }
+    }
+}
+```
+
+# Named Constructors en entidades y registro de eventos de dominio
+
+Básicamente es el patrón que usamos en la entidad `Video` para registrar el evento de dominio `VideoCreatedDomainEvent` a la hora de crear nuevos vídeos:
+
+```php
+// Extracto de: https://github.com/CodelyTV/cqrs-ddd-php-example/blob/master/src/Context/Video/Module/Video/Domain/Video.php
+
+final class Video extends AggregateRoot
+{
+    private $id;
+    private $title;
+    private $url;
+    private $courseId;
+
+    // ℹ️ Constructor por defecto. Útil por ejemplo para recuperar instancias de videos en un determinado estado a través de la base de datos.
+    public function __construct(VideoId $id, VideoTitle $title, VideoUrl $url, CourseId $courseId)
+    {
+        $this->id       = $id;
+        $this->title    = $title;
+        $this->url      = $url;
+        $this->courseId = $courseId;
+    }
+
+    // ℹ️ Named constructor para instanciar nuevos vídeos que se creen por primera vez.
+    public static function create(VideoId $id, VideoTitle $title, VideoUrl $url, CourseId $courseId): Video
+    {
+        $video = new self($id, $title, $url, $courseId); // ℹ️ Creamos la instancia a través del constructor por defecto.
+
+        $video->record( // ℹ️ Nos guardamos en un array interno de la clase el evento de vídeo creado para publicarlo a posteriori desde el Application Service.
+            new VideoCreatedDomainEvent(
+                $id->value(),
+                [
+                    'title'    => $title->value(),
+                    'url'      => $url->value(),
+                    'courseId' => $courseId->value(),
+                ]
+            )
+        );
+
+        return $video; // ℹ️ Retornamos la instancia creada con el evento registrado.
+    }
+}
+```
+
+Destacar por tanto que siempre **registraremos los eventos de nuestras entidades en el punto donde se produzcan estas acciones.**
+
+## Publicación de eventos de dominio
+
+Para que otras aplicaciones de nuestro sistema lo puedan aprovechar, o incluso otros módulos de nuestra propia aplicación.
+
+La publicación de eventos de dominio la podríamos hacer de múltiples formas:
+
+- Con un singleton o método estático del publicador de eventos
+- Inyectando el servicio de publicación de eventos en la entidad
+- Inyectando el publicador de eventos en el caso de uso
+
+  ```php
+  // Extracto de: https://github.com/CodelyTV/cqrs-ddd-php-example/blob/master/src/Context/Video/Module/Video/Application/Create/VideoCreator.php
+  final class VideoCreator // ℹ️ Servicio de Aplicación / Caso de uso de crear nuevo vídeo!
+  {
+      private $repository;
+      private $publisher;
+
+      public function __construct(VideoRepository $repository, DomainEventPublisher $publisher)
+      {
+          $this->repository = $repository;
+          $this->publisher  = $publisher;
+      }
+
+      public function create(VideoId $id, VideoTitle $title, VideoUrl $url, CourseId $courseId)
+      {
+          $video = Video::create($id, $title, $url, $courseId); // ℹ️ Creamos el vídeo (¡Sólo registrando el evento, no publicándolo!)
+
+          $this->repository->save($video); // ℹ️ Guardamos el vídeo en nuestro sistema de persistencia
+
+          $this->publisher->publish(...$video->pullDomainEvents()); // ℹ️ Obtenemos los distintos eventos que se han podido registrar en la entidad, y los publicamos
+      }
+  }
+  ```
