@@ -449,3 +449,44 @@ final class VideoCreatorShould extends UnitTestCase with MockFactory {
 Estos serían un tipo de test unitario donde **el objeto de test es alguna implementación de uno de nuestros puertos.**
 
 Es decir, en el caso del test unitario, habríamos falseado mediante un doble de test la interface de dominio `UserRepository`, mientras que en el test de integración lo que haremos será justamente testear la implementación de `MySqlUserRepository` para validar que se comporta como esperamos.
+
+Los test de integración básicamente nos permitirán comprobar de forma aislada que las distintas implementaciones a nivel de infraestructura (adapters) funcionan como se espera.
+
+Ejemplo: implementación real del repositorio de vídeos
+
+```php
+// Extracto de: https://github.com/CodelyTV/cqrs-ddd-php-example/blob/af67faf454e29b608d57ea3ca7156e2b25696512/src/Context/Video/Module/Video/Tests/Infrastructure/VideoRepositoryTest.php
+
+final class VideoRepositoryTest extends VideoModuleFunctionalTestCase
+{
+    /** @test */
+    public function it_should_save_a_video()
+    {
+        $this->repository()->save(VideoStub::random());
+    }
+
+    /** @test */
+    public function it_should_find_an_existing_video()
+    {
+        $video = VideoStub::random();
+
+        $this->repository()->save($video);
+        $this->clearUnitOfWork(); // ℹ️ Importante limpiar la Unit Of Work para evitar que al hacer el search quien nos devuelva el vídeo sea el ORM en base a lo que tiene ya en memória debido a haberlo guardado.
+
+        $this->assertSimilar($video, $this->repository()->search($video->id()));
+    }
+
+    /** @test */
+    public function it_should_not_find_a_non_existing_video()
+    {
+        $this->assertNull($this->repository()->search(VideoIdStub::random()));
+    }
+
+    // ℹ️ Nótese que a la hora de obtener la implementación a ejecutar del repositorio lo hacemos en base al contenedor de dependencias de producción.
+    // Es decir, estamos atacando a la implementación del repositorio que usamos en producción.
+    private function repository(): VideoRepository
+    {
+        return $this->service('codely.video.video.repository');
+    }
+}
+```
