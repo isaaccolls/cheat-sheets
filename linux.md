@@ -232,7 +232,7 @@ Categories=Development;
 
 # dbeaver
 
-[https://dbeaver.io/download/](source)
+[website](https://dbeaver.io/download/)
 
 Ubuntu PPA:
 
