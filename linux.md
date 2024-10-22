@@ -15,6 +15,7 @@
   - [dark bookmarks](#dark-bookmarks)
 - [after install](#after-install)
   - [install](#install)
+- [dbeaver](#dbeaver)
   - [themes](#themes)
   - [sport camera as webcam](#sport-camera-as-webcam)
   - [fix opera bug](#fix-opera-bug)
@@ -219,7 +220,6 @@ Categories=Development;
 - git: `sudo apt-get git`
 - opera
 - postman
-- dbeaver
 - torrent client: `sudo apt-get install transmission`
 - operator mono _font_
 - vscode
@@ -229,6 +229,18 @@ Categories=Development;
 - terminator: `sudo apt-get install terminator`
 - tweaks: `sudo apt install gnome-tweaks`
 - heic support: `sudo apt install heif-gdk-pixbuf` and `sudo apt-get install heif-thumbnailer`
+
+# dbeaver
+
+[https://dbeaver.io/download/](source)
+
+Ubuntu PPA:
+
+```bash
+sudo add-apt-repository ppa:serge-rider/dbeaver-ce
+sudo apt-get update
+sudo apt-get install dbeaver-ce
+```
 
 ### zsh
 
