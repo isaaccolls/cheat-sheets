@@ -286,10 +286,16 @@ sudo gpasswd -a $USER plugdev
 - writer: `sudo apt-get install libreoffice-writer`
 - draw: `sudo apt-get install libreoffice-draw`
 
-### tuxguitar
+### Music edition
+
+#### tuxguitar
 
 1. `sudo apt-get install tuxguitar tuxguitar-alsa tuxguitar-jsa tuxguitar-oss`
 2. go to Tools -> Settings -> Sound and select _Gervill_ as Midi Port.
+
+#### MuseScore
+
+- install with `sudo apt install musescore`
 
 ### nvidia
 
