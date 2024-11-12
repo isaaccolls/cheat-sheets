@@ -2,6 +2,7 @@
 - [simple http server](#simple-http-server)
 - [virtual environment](#virtual-environment)
 - [list](#list)
+- [dataframe](#dataframe)
 
 # zen
 
@@ -134,3 +135,7 @@ xs = [3,1,4,2]
 xs.sort()
 # xs = [1,2,3,4]
 ```
+
+# dataframe
+
+- Convert the whole dataframe as a string and display: `display(df.to_string())`
