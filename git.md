@@ -8,6 +8,9 @@
   - [Branches](#branches)
   - [Stash](#stash)
 - [Change Git Commit Date](#change-git-commit-date)
+- [Branch naming conventions](#branch-naming-conventions)
+  - [Git branch prefixes](#git-branch-prefixes)
+  - [Example of branch naming in action](#example-of-branch-naming-in-action)
 
 # generating SSH keys
 
@@ -112,3 +115,27 @@ is a temporary storage
 - export next variables: `export GIT_AUTHOR_DATE="2022-05-03T16:21:12-04:00" ; export GIT_COMMITTER_DATE="2022-05-03T16:21:12-04:00"`
   - Revert back to wall clock time `unset GIT_AUTHOR_DATE && unset GIT_COMMITTER_DATE`
 - change last commit date: `GIT_COMMITTER_DATE="2022-03-21T10:12:11-03:00" git commit --amend --no-edit --date "2022-03-21T10:12:11-03:00"`
+
+# Branch naming conventions
+
+## Git branch prefixes
+
+Using prefixes in branch names is a popular strategy to categorize branches based on their purpose:
+
+- Feature branches: Prefixed with `feature/`, these branches are used to develop new features.
+- Bugfix branches: Prefixed with `bugfix/`, these branches are used to make fixes.
+- Release branches: Prefixed with `release/`, these branches prepare a codebase for new releases.
+- Hotfix branches: Prefixed with `hotfix/`, these branches address urgent issues in production.
+
+## Example of branch naming in action
+
+```bash
+# Creating a new feature branch
+git checkout -b feature/add-user-authentication
+# Switching to a bugfix branch
+git checkout -b bugfix/login-issue
+# Creating new release branch
+git checkout -b release/v2.0.0
+# Preparing a hotfix
+git checkout -b hotfix/reset-password-fix
+```
