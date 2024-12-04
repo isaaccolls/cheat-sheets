@@ -4,6 +4,9 @@
   - [mouse](#mouse)
   - [commands](#commands)
   - [launch options](#launch-options)
+- [1.6](#16)
+- [display](#display)
+  - [crosshair](#crosshair)
 
 # enable console
 
@@ -33,3 +36,15 @@
 ## launch options
 
 `-novid -high -fullscreen`
+
+# 1.6
+
+# display
+
+- show fps: `cl_showfps 1`
+
+## crosshair
+
+- color: `cl_crosshair_color 255 105 180`
+- size: `cl_crosshairsize small`
+- dynamic: `cl_dynamiccrosshair 0`
