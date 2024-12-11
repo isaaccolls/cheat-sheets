@@ -1,6 +1,7 @@
 - [lambda](#lambda)
   - [python](#python)
 - [ec2](#ec2)
+- [s3](#s3)
 
 # lambda
 
@@ -22,3 +23,7 @@
 
 - **user-data** logs: `sudo cat /var/log/cloud-init-output.log`
 - **user-data** script: `sudo cat /var/lib/cloud/instances/i-420/user-data.txt`
+
+# s3
+
+- remove something form bucket: `aws s3 rm s3://cencosud.prod.ccom.cl.raw/vortex/year=2024/month=11/day=13/aux0/events.csv`
