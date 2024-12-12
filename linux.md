@@ -301,6 +301,11 @@ sudo gpasswd -a $USER plugdev
 
 monitor: `sudo apt install nvtop`
 
+### sensors
+
+- install: `sudo apt install lm-sensors`
+- run `sensors`
+
 ## themes
 
 - theme, cursor and icons: check for something cool on [pling](https://www.pling.com/p/1403328/)
