@@ -27,3 +27,4 @@
 # s3
 
 - remove something form bucket: `aws s3 rm s3://cencosud.prod.ccom.cl.raw/vortex/year=2024/month=11/day=13/aux0/events.csv`
+- copy: `aws s3 cp s3://cencosud.prod.ccom.cl.enriched/vortex/Chile/Jumbo-Prime/year=2024/month=12/day=24/ s3://cencosud.prod.ccom.cl.enriched/vortex/Chile/Jumbo-Prime/year=2024/month=12/day=24-real/ --recursive`
