@@ -26,7 +26,7 @@
 - delete all pods from deployment:
   - `kubectl delete pods --selector=app=[deployment_name]`
   - `kubectl delete pods -l app=vortex-executor`
-- show secret: `kubectl get secret request-to-hermes-inbox-dev-consumer-key-r -n hermes-dev -o jsonpath="{.data.key}" | base64 --decode`
+- show secret: `kubectl get secret request-to-hermes-inbox-consumer-key-1 -o jsonpath="{.data.key}" | base64 --decode`
 
 ### deletes
 
