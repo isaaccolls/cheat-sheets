@@ -46,7 +46,7 @@
 - install mongoose: work with mongodb `npm install mongoose --save`
 - install mongoose-pagination: mongoose query pagination `npm install mongoose-pagination --save`
 - install nodemon: automatically restart the node application when file changes in the directory are detected `npm install nodemon --save-dev` or `yarn add [package-name] --dev`
-- install specific package version `npm install [package-name]@[version-number]`
+- install specific package version `npm install [package-name]@[version-number]` or `yarn add [package-name]@[version-number]`
 - uninstall package `npm uninstall mongoose --save` `yarn remove [package]`
 - start project `npm start` or `npm start --host ip` or `yarn start`
 - always run nodemon: add scripts on package.json `"start": "nodemon index.js"`
