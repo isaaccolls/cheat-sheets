@@ -4,6 +4,8 @@
 - [delete actual database](#delete-actual-database)
 - [log into MongoDB](#log-into-mongodb)
 - [commands](#commands)
+  - [administrative commands](#administrative-commands)
+  - [Example query](#example-query)
 - [mongo and docker](#mongo-and-docker)
 
 # start
@@ -34,12 +36,12 @@ mongorestore -vvvvv -h 127.0.0.1 -d AUTHNunchee -c User dump/AUTHNunchee/User.bs
 ```
 
 ```bash
-mongo "mongodb+srv://kubi.u3bvn.mongodb.net/kubi_app" --username root --password l6t7nsgC03OQ2e9b
+mongo "mongodb+srv://kubi.u3bvn.mongodb.net/kubi_app" --username root --password pass1234
 mongorestore -vvvvv \
   --host=atlas-b9xt68-shard-0/kubi-shard-00-01.u3bvn.mongodb.net:27017,kubi-shard-00-02.u3bvn.mongodb.net:27017,kubi-shard-00-00.u3bvn.mongodb.net:27017 \
   --ssl \
   --username 'root' \
-  --password 'l6t7nsgC03OQ2e9b' \
+  --password 'pass1234' \
   --ssl \
   --sslAllowInvalidCertificates \
   --sslAllowInvalidHostnames \
@@ -95,16 +97,20 @@ mongo -u <username> -p <password> --authenticationDatabase <dbname>
 - update
 
 ```javascript
-db.getCollection('Asset').update({
-    '__belong.Client': ObjectId('5a1dc4176b769850f7fb978c'),
-}, {
+db.getCollection("Asset").update(
+  {
+    "__belong.Client": ObjectId("5a1dc4176b769850f7fb978c"),
+  },
+  {
     $addToSet: {
-        '__belong.AccessGroup': ObjectId('5a6b49a00ad5d4217fec6434')
+      "__belong.AccessGroup": ObjectId("5a6b49a00ad5d4217fec6434"),
     },
-}, {
+  },
+  {
     multi: true,
     upsert: false,
-}, );
+  }
+);
 ```
 
 - display collection records
@@ -134,40 +140,40 @@ db.getCollection('Asset').update({
 ## Example query
 
 ```javascript
-db.getCollection('News')
-    .find({
-        '__belong.Client': ObjectId('587c502d67e4ce42f74a7061'),
-        $where: 'this.videos.length > 0',
-    })
-    .forEach(function(item) {
-        var assetIds = [];
-        for (i in item.videos) {
-            db.getCollection('Asset')
-                .find({
-                    _id: item.videos[i]._id
-                })
-                .forEach(function(asset) {
-                    assetIds.push(asset._id);
-                });
-        }
-        db.getCollection('Video')
-            .find({
-                '__belong.Asset': {
-                    $in: assetIds
-                },
-                jwplayerMediaId: {
-                    $exists: true
-                },
-            })
-            .forEach(function(video) {
-                var output = {
-                    title: item.title,
-                    fecha: item.available,
-                    jw: video.jwplayerMediaId,
-                };
-                print(output);
-            });
-    });
+db.getCollection("News")
+  .find({
+    "__belong.Client": ObjectId("587c502d67e4ce42f74a7061"),
+    $where: "this.videos.length > 0",
+  })
+  .forEach(function (item) {
+    var assetIds = [];
+    for (i in item.videos) {
+      db.getCollection("Asset")
+        .find({
+          _id: item.videos[i]._id,
+        })
+        .forEach(function (asset) {
+          assetIds.push(asset._id);
+        });
+    }
+    db.getCollection("Video")
+      .find({
+        "__belong.Asset": {
+          $in: assetIds,
+        },
+        jwplayerMediaId: {
+          $exists: true,
+        },
+      })
+      .forEach(function (video) {
+        var output = {
+          title: item.title,
+          fecha: item.available,
+          jw: video.jwplayerMediaId,
+        };
+        print(output);
+      });
+  });
 ```
 
 # mongo and docker
