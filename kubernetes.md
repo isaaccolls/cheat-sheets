@@ -27,6 +27,7 @@
   - `kubectl delete pods --selector=app=[deployment_name]`
   - `kubectl delete pods -l app=vortex-executor`
 - show secret: `kubectl get secret request-to-hermes-inbox-consumer-key-1 -o jsonpath="{.data.key}" | base64 --decode`
+- show hpa info `kubectl get hpa vortex-studio-frontend -o yaml`
 
 ### deletes
 
@@ -35,6 +36,7 @@ kubectl delete deploy [deploy-name]
 kubectl delete service [service-name]
 kubectl delete secret [secret-name]
 kubectl delete ingress [ingress-name]
+kubectl delete hpa [hpa-name]
 kubectl delete cronjob [cronjob-name]
 kubectl get all | grep [app-name] # and delete all that 💩
 # check for kong and delete...
