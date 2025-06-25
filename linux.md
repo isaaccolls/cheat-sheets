@@ -21,6 +21,7 @@
   - [fix opera bug](#fix-opera-bug)
   - [run script when logging](#run-script-when-logging)
   - [run script when usb plugged in](#run-script-when-usb-plugged-in)
+- [emoji](#emoji)
 
 # locations
 
@@ -351,3 +352,9 @@ X-GNOME-Autostart-enabled=true
 - add a new rule on `/etc/udev/rules.d/`
   - name: `openrazer.rules`
   - content: `ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1532", RUN+="/etc/udev/rules.d/test.sh"`
+
+# emoji
+
+- favorites:
+  - show: `gsettings list-recursively | grep -i emoji`
+  - set: `gsettings set org.freedesktop.ibus.panel.emoji favorites "['🙂', '🤤', '❤️', '😯', '😬', '🤙', '😘', '🤔', '✌️', '🔥', '🚀', '🐢', '✅', '🤯', '🙏', '👍', '👀', '👉', '👈', '☝️', '👇', '📺', '💪', '🍭', '👌', '🔍', '🏄', '😍', '🥹', '🤷', 'ñ', 'Ñ', '🫶', '💡', '😎', '😈', '🙌', '🤦', '😉', '🤘', '💩', '😕', '🫣', '🤣', '😫', '🥺', '🤓', '👽', '😅', '☠️', '😦', '🍹', '🔫', '🤑', '🥳', '😴', '😏', '🥵', '🎵', '🙁', '😨', '🥲', '🥶', '👎', '💔', '💅', '💯', '🍄', '🍻', '🙈', '🐶', '😳', '🏂', '😒', '🤡']"`
