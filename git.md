@@ -93,6 +93,7 @@ git config user.email "info@nanhekumar.com"
   - prevents merging in a fast-forward way: `git merge --no-ff`
 - Cambiar un commit a otra rama `git cherry-pick [SHA1]`
 - Delete local branch `git branch -d the_local_branch`
+- delete all local branches except the current one: `git branch | grep -v "$(git branch --show-current)" | xargs git branch -D`
 - To remove a remote branch `git push origin :the_remote_branch`
 - rename local branch `git branch -m <new_name>`
 
