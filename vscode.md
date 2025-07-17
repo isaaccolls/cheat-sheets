@@ -35,12 +35,14 @@
 
 ```json
 {
-  "workbench.colorTheme": "Dracula",
+  "workbench.colorTheme": "Dracula Theme",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editor.enablePreview": false,
   "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
     "*.ipynb": "jupyter-notebook",
-    "git-rebase-todo": "gitlens.rebase"
+    "git-rebase-todo": "gitlens.rebase",
+    "*.sql": "default"
   },
   "workbench.colorCustomizations": {},
   "workbench.iconTheme": "vscode-icons",
@@ -84,10 +86,9 @@
   "markdown.extension.toc.levels": "1..2",
   "security.workspace.trust.untrustedFiles": "open",
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1707424473136,
+  "php-cs-fixer.lastDownload": 1750807991304,
   "sonarlint.ls.javaHome": "/usr/lib/jvm/jdk-21-oracle-x64",
   "opa.path": "/home/isaac/opa",
-  "diffEditor.ignoreTrimWhitespace": false,
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
@@ -102,7 +103,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8"
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "diffEditor.ignoreTrimWhitespace": true
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -155,6 +157,31 @@
   },
   "[dbml]": {
     "editor.defaultFormatter": "matt-meyers.vscode-dbml"
+  },
+  "hediet.vscode-drawio.resizeImages": null,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    "/tmp/postman-http-request-post-response.instructions.md": true,
+    "/tmp/postman-http-request-pre-request.instructions.md": true,
+    "/tmp/postman-collections-post-response.instructions.md": true,
+    "/tmp/postman-collections-pre-request.instructions.md": true,
+    "/tmp/postman-folder-post-response.instructions.md": true,
+    "/tmp/postman-folder-pre-request.instructions.md": true
   }
 }
 ```
