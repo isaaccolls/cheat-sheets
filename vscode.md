@@ -88,7 +88,6 @@
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
   "php-cs-fixer.lastDownload": 1750807991304,
   "sonarlint.ls.javaHome": "/usr/lib/jvm/jdk-21-oracle-x64",
-  "opa.path": "/home/isaac/opa",
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
