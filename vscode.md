@@ -35,81 +35,23 @@
 
 ```json
 {
-  "workbench.colorTheme": "Dracula Theme",
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "workbench.editor.enablePreview": false,
-  "workbench.editorAssociations": {
-    "*.copilotmd": "vscode.markdown.preview.editor",
-    "*.ipynb": "jupyter-notebook",
-    "git-rebase-todo": "gitlens.rebase",
-    "*.sql": "default"
+  "[c]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
   },
-  "workbench.colorCustomizations": {},
-  "workbench.iconTheme": "vscode-icons",
-  "editor.fontFamily": "'Operator Mono'",
-  "editor.fontSize": 16,
-  "editor.renderWhitespace": "all",
-  "editor.minimap.enabled": false,
-  "editor.rulers": [72, 79],
-  "editor.accessibilitySupport": "off",
-  "editor.tabSize": 2,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+  "[dbml]": {
+    "editor.defaultFormatter": "matt-meyers.vscode-dbml"
   },
-  "editor.rename.enablePreview": false,
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
-  "editor.wordWrap": "off",
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  "terminal.integrated.fontWeightBold": "normal",
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.tabs.enabled": true,
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "git.confirmSync": false,
-  "git.suggestSmartCommit": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "eslint.format.enable": true,
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact"
-  ],
-  "notebook.cellToolbarLocation": {
-    "default": "right",
-    "jupyter-notebook": "left"
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "python.defaultInterpreterPath": "/usr/bin/python3",
-  "markdown.extension.toc.levels": "1..2",
-  "security.workspace.trust.untrustedFiles": "open",
-  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1750807991304,
-  "sonarlint.ls.javaHome": "/usr/lib/jvm/jdk-21-oracle-x64",
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "[markdown]": {
-    "editor.wordWrapColumn": 80,
-    "editor.wordWrap": "off",
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "off"
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.autopep8",
-    "diffEditor.ignoreTrimWhitespace": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -117,71 +59,128 @@
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "other": "off",
+      "strings": "off"
+    },
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 80
+  },
+  "[nginx]": {
+    "editor.defaultFormatter": "raynigon.nginx-formatter"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "bradymholt.pgformatter",
+    "editor.wordWrap": "off"
+  },
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[nginx]": {
-    "editor.defaultFormatter": "raynigon.nginx-formatter"
-  },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  },
-  "[sql]": {
-    "editor.wordWrap": "off",
-    "editor.defaultFormatter": "bradymholt.pgformatter"
-  },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "files.associations": {
-    "*.yml": "yaml"
-  },
-  "[terraform]": {
-    "editor.defaultFormatter": "hashicorp.terraform"
-  },
-  "[dotenv]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[shellscript]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[ignore]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "[dbml]": {
-    "editor.defaultFormatter": "matt-meyers.vscode-dbml"
-  },
-  "hediet.vscode-drawio.resizeImages": null,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
-  },
-  "[properties]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
-  },
-  "github.copilot.editor.enableAutoCompletions": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
-  "[c]": {
-    "editor.defaultFormatter": "ms-vscode.cpptools"
-  },
   "chat.instructionsFilesLocations": {
     ".github/instructions": true,
-    "/tmp/postman-http-request-post-response.instructions.md": true,
-    "/tmp/postman-http-request-pre-request.instructions.md": true,
     "/tmp/postman-collections-post-response.instructions.md": true,
     "/tmp/postman-collections-pre-request.instructions.md": true,
     "/tmp/postman-folder-post-response.instructions.md": true,
-    "/tmp/postman-folder-pre-request.instructions.md": true
-  }
+    "/tmp/postman-folder-pre-request.instructions.md": true,
+    "/tmp/postman-http-request-post-response.instructions.md": true,
+    "/tmp/postman-http-request-pre-request.instructions.md": true
+  },
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.fontFamily": "'Operator Mono'",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.minimap.enabled": false,
+  "editor.rename.enablePreview": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [72, 79],
+  "editor.tabSize": 2,
+  "editor.wordWrap": "off",
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.associations": {
+    "*.yml": "yaml"
+  },
+  "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": false,
+    "plaintext": false,
+    "scminput": false
+  },
+  "hediet.vscode-drawio.resizeImages": null,
+  "markdown.extension.toc.levels": "1..2",
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 1750807991304,
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "security.workspace.trust.untrustedFiles": "open",
+  "sonarlint.ls.javaHome": "/usr/lib/jvm/jdk-21-oracle-x64",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.tabs.enabled": true,
+  "workbench.colorCustomizations": {},
+  "workbench.colorTheme": "Dracula Theme",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editorAssociations": {
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.ipynb": "jupyter-notebook",
+    "*.sql": "default",
+    "git-rebase-todo": "gitlens.rebase"
+  },
+  "workbench.iconTheme": "vscode-icons"
 }
 ```
 
