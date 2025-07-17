@@ -192,31 +192,37 @@ backup: `code --list-extensions | xargs -L 1 echo code --install-extension`
 
 ```sh
 code --list-extensions | xargs -L 1 echo code --install-extension
+code --install-extension adpyke.codesnap
 code --install-extension ahmadalli.vscode-nginx-conf
+code --install-extension astro-build.astro-vscode
 code --install-extension atdushi.conky
 code --install-extension bmewburn.vscode-intelephense-client
 code --install-extension bradymholt.pgformatter
 code --install-extension codestream.codestream
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension deerawan.vscode-faker
+code --install-extension docker.docker
 code --install-extension dracula-theme.theme-dracula
 code --install-extension eamodio.gitlens
 code --install-extension esbenp.prettier-vscode
 code --install-extension firsttris.vscode-jest-runner
 code --install-extension foxundermoon.shell-format
 code --install-extension genieai.chatgpt-vscode
+code --install-extension getpsalm.psalm-vscode-plugin
 code --install-extension gitduck.code-streaming
 code --install-extension github.copilot
 code --install-extension github.copilot-chat
 code --install-extension github.vscode-github-actions
 code --install-extension hashicorp.terraform
 code --install-extension hediet.vscode-drawio
+code --install-extension humao.rest-client
 code --install-extension junstyle.php-cs-fixer
 code --install-extension matt-meyers.vscode-dbml
 code --install-extension mechatroner.rainbow-csv
 code --install-extension mikestead.dotenv
 code --install-extension mintlify.document
 code --install-extension mrmlnc.vscode-apache
+code --install-extension ms-azuretools.vscode-containers
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code --install-extension ms-python.autopep8
@@ -231,6 +237,12 @@ code --install-extension ms-toolsai.vscode-jupyter-cell-tags
 code --install-extension ms-toolsai.vscode-jupyter-slideshow
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-ssh-edit
+code --install-extension ms-vscode.cmake-tools
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.cpptools-extension-pack
+code --install-extension ms-vscode.cpptools-themes
+code --install-extension ms-vscode.makefile-tools
+code --install-extension ms-vscode.vscode-speech
 code --install-extension mtxr.sqltools
 code --install-extension nhoizey.gremlins
 code --install-extension nicolas-liger.dbml-viewer
@@ -246,5 +258,6 @@ code --install-extension tobermory.es6-string-html
 code --install-extension tsandall.opa
 code --install-extension unifiedjs.vscode-mdx
 code --install-extension vscode-icons-team.vscode-icons
+code --install-extension yzane.markdown-pdf
 code --install-extension yzhang.markdown-all-in-one
 ```
