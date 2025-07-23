@@ -42,6 +42,7 @@
 # display
 
 - show fps: `cl_showfps 1`
+- show fps and net: `net_graph 3` 👈
 
 ## crosshair
 
