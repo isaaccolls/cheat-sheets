@@ -1,3 +1,4 @@
+- [actual machine](#actual-machine)
 - [locations](#locations)
 - [commands / shortcuts / apps](#commands--shortcuts--apps)
   - [samba](#samba)
@@ -22,6 +23,11 @@
   - [run script when logging](#run-script-when-logging)
   - [run script when usb plugged in](#run-script-when-usb-plugged-in)
 - [emoji](#emoji)
+
+# actual machine
+
+- product: RZ09-02385E71
+- serial: BY1837A44603551
 
 # locations
 
