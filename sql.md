@@ -138,6 +138,12 @@ sudo service postgresql status
 
 - install `sudo apt-get install pgadmin3`
 
+### initialization
+
+- connect: `psql -h localhost -p 5432 -U vortex_admin -d postgres`
+- list schemas: `SELECT schema_name FROM information_schema.schemata WHERE schema_name = 'vortex_core_db';`
+- create schema: `CREATE SCHEMA IF NOT EXISTS vortex_core_db;`
+
 ## mysql
 
 - install: `apt-get install mysql-client`
