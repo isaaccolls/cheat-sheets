@@ -41,11 +41,10 @@
 
 # display
 
-- show fps: `cl_showfps 1`
-- show fps and net: `net_graph 3` 👈
+- show fps and net: `net_graph 3`
 
 ## crosshair
 
-- color: `cl_crosshair_color 255 105 180`
-- size: `cl_crosshairsize small`
-- dynamic: `cl_dynamiccrosshair 0`
+- color: `cl_crosshair_color "255 0 255"`
+- size: `cl_crosshair_size small`
+- controls transparency: `cl_crosshair_translucent 0`
