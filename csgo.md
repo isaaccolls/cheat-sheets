@@ -49,18 +49,19 @@
 - size: `cl_crosshair_size small`
 - controls transparency: `cl_crosshair_translucent 0`
 
-#### autoexec
+#### userconfig.cfg
 
 create file `/home/isaac/.local/share/Steam/steamapps/common/Half-Life/cstrike/` with the commands:
 
 ```
+developer 1
+echo "starting to load userconfig..."
 // Crosshair configuration
 cl_crosshair_color "255 0 255"
-cl_crosshair_size small
-cl_crosshair_translucent 0
-// Other settings
-developer 1
-echo "Autoexec loaded successfully"
+cl_crosshair_size "small"
+cl_crosshair_translucent "0"
+cl_dynamiccrosshair "0"
+echo "userconfig loaded successfully!!"
 ```
 
-made it executable by running: `chmod +x autoexec.cfg`
+made it executable by running: `chmod +x userconfig.cfg`
