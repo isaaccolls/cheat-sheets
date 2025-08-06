@@ -48,3 +48,19 @@
 - color: `cl_crosshair_color "255 0 255"`
 - size: `cl_crosshair_size small`
 - controls transparency: `cl_crosshair_translucent 0`
+
+#### autoexec
+
+create file `/home/isaac/.local/share/Steam/steamapps/common/Half-Life/cstrike/` with the commands:
+
+```
+// Crosshair configuration
+cl_crosshair_color "255 0 255"
+cl_crosshair_size small
+cl_crosshair_translucent 0
+// Other settings
+developer 1
+echo "Autoexec loaded successfully"
+```
+
+made it executable by running: `chmod +x autoexec.cfg`
