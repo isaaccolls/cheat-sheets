@@ -79,6 +79,7 @@ git config user.email "info@nanhekumar.com"
 - Elimina los cambios incluso del working directory, es el más peligroso de todos `git reset --hard [SHA1]`
 - reset one file 👽 `git checkout -- [file]`
 - extract file from staging `git reset [file]`
+- rebase: `git rebase -i HEAD~9`
 
 ## Branches
 
