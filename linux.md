@@ -23,6 +23,7 @@
   - [run script when logging](#run-script-when-logging)
   - [run script when usb plugged in](#run-script-when-usb-plugged-in)
 - [emoji](#emoji)
+- [sreencast](#sreencast)
 
 # actual machine
 
@@ -365,3 +366,7 @@ X-GNOME-Autostart-enabled=true
 - favorites:
   - show: `gsettings list-recursively | grep -i emoji`
   - set: `gsettings set org.freedesktop.ibus.panel.emoji favorites "['🙂', '🤤', '❤️', '😯', '😬', '🤙', '😘', '🤔', '✌️', '🔥', '🚀', '🐢', '✅', '🤯', '🙏', '👍', '👀', '👉', '👈', '☝️', '👇', '📺', '💪', '🍭', '👌', '🔍', '🏄', '😍', '🥹', '🤷', 'ñ', 'Ñ', '🫶', '💡', '😎', '😈', '🙌', '🤦', '😉', '🤘', '💩', '😕', '🫣', '🤣', '😫', '🥺', '🤓', '👽', '😅', '☠️', '😦', '🍹', '🔫', '🤑', '🥳', '😴', '😏', '🥵', '🎵', '🙁', '😨', '🥲', '🥶', '👎', '💔', '💅', '💯', '🍄', '🍻', '🙈', '🐶', '😳', '🏂', '😒', '🤡']"`
+
+# sreencast
+
+- kill it: `kill $(ps aux | grep gjs | grep Screencast | grep -v 'grep' | awk '{print $2}')`
