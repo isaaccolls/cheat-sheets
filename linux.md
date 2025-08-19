@@ -370,3 +370,4 @@ X-GNOME-Autostart-enabled=true
 # sreencast
 
 - kill it: `kill $(ps aux | grep gjs | grep Screencast | grep -v 'grep' | awk '{print $2}')`
+- record from terminal: `ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i $DISPLAY file_name.mp4`
