@@ -35,12 +35,13 @@ last settings:
 
 ```json
 {
-  "window.commandCenter": true,
-  "workbench.colorTheme": "Dracula Theme",
-  "editor.fontSize": 16,
-  "terminal.integrated.fontSize": 16,
-  "terminal.integrated.fontFamily": "MesloLGS NF",
-  "editor.fontFamily": "'Operator Mono'"
+    "window.commandCenter": true,
+    "workbench.colorTheme": "Dracula Theme",
+    "editor.fontSize": 16,
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "editor.fontFamily": "'Operator Mono'",
+    "editor.renderWhitespace": "all"
 }
 ```
 
