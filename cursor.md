@@ -35,6 +35,11 @@ last settings:
 
 ```json
 {
-  "window.commandCenter": true
+  "window.commandCenter": true,
+  "workbench.colorTheme": "Dracula Theme",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "editor.fontFamily": "'Operator Mono'"
 }
 ```
