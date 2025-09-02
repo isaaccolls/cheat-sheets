@@ -41,7 +41,8 @@ last settings:
     "terminal.integrated.fontSize": 16,
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.fontFamily": "'Operator Mono'",
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [72,79]
 }
 ```
 
