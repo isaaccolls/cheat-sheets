@@ -42,7 +42,11 @@ last settings:
     "terminal.integrated.fontFamily": "MesloLGS NF",
     "editor.fontFamily": "'Operator Mono'",
     "editor.renderWhitespace": "all",
-    "editor.rulers": [72,79]
+    "editor.rulers": [
+        72,
+        79
+    ],
+    "git.confirmSync": false
 }
 ```
 
