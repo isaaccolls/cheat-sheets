@@ -43,3 +43,11 @@ last settings:
   "editor.fontFamily": "'Operator Mono'"
 }
 ```
+
+## extensions
+
+show: `ls -1 /home/isaac/.cursor/extensions | sort`
+
+```
+dracula-theme.theme-dracula-2.25.1-universal
+```
