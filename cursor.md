@@ -19,3 +19,9 @@ remove:
 
 - `~/.cursor`
 - `~/.config/Cursor`
+
+# Keyboard Shortcuts
+
+- `Ctrl+I`: Toggle Sidepanel (unless bound to mode)
+- `tab`: Accept suggestion
+- `Ctrl+K`: Open terminal prompt bar
