@@ -25,3 +25,16 @@ remove:
 - `Ctrl+I`: Toggle Sidepanel (unless bound to mode)
 - `tab`: Accept suggestion
 - `Ctrl+K`: Open terminal prompt bar
+
+# preferences
+
+1. Open _Command Palette_: `Ctrl + Shift + P`
+1. write: `Preferences: Open Settings (JSON)`
+
+last settings:
+
+```json
+{
+  "window.commandCenter": true
+}
+```
