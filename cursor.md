@@ -46,7 +46,9 @@ last settings:
         72,
         79
     ],
-    "git.confirmSync": false
+    "git.confirmSync": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDragAndDrop": false
 }
 ```
 
@@ -56,4 +58,7 @@ show: `ls -1 /home/isaac/.cursor/extensions | sort`
 
 ```
 dracula-theme.theme-dracula-2.25.1-universal
+eamodio.gitlens-17.4.1-universal
+extensions.json
+pkief.material-icon-theme-5.26.0-universal
 ```
