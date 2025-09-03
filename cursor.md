@@ -46,6 +46,7 @@ last settings:
         72,
         79
     ],
+    "editor.formatOnSave": true,
     "git.confirmSync": false,
     "workbench.iconTheme": "material-icon-theme",
     "explorer.confirmDragAndDrop": false
