@@ -47,6 +47,9 @@ last settings:
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -74,6 +77,7 @@ last settings:
 show: `ls -1 /home/isaac/.cursor/extensions | sort`
 
 ```
+bmewburn.vscode-intelephense-client-1.14.4-universal
 dbaeumer.vscode-eslint-3.0.16-universal
 dracula-theme.theme-dracula-2.25.1-universal
 eamodio.gitlens-17.4.1-universal
