@@ -35,21 +35,37 @@ last settings:
 
 ```json
 {
-    "window.commandCenter": true,
-    "workbench.colorTheme": "Dracula Theme",
-    "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 16,
-    "terminal.integrated.fontFamily": "MesloLGS NF",
-    "editor.fontFamily": "'Operator Mono'",
-    "editor.renderWhitespace": "all",
-    "editor.rulers": [
-        72,
-        79
-    ],
-    "editor.formatOnSave": true,
-    "git.confirmSync": false,
-    "workbench.iconTheme": "material-icon-theme",
-    "explorer.confirmDragAndDrop": false
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": null,
+  "editor.fontFamily": "'Operator Mono'",
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [72, 79],
+  "explorer.confirmDragAndDrop": false,
+  "git.confirmSync": false,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "terminal.integrated.fontSize": 16,
+  "window.commandCenter": true,
+  "workbench.colorTheme": "Dracula Theme",
+  "workbench.iconTheme": "material-icon-theme"
 }
 ```
 
@@ -61,6 +77,7 @@ show: `ls -1 /home/isaac/.cursor/extensions | sort`
 dbaeumer.vscode-eslint-3.0.16-universal
 dracula-theme.theme-dracula-2.25.1-universal
 eamodio.gitlens-17.4.1-universal
+esbenp.prettier-vscode-11.0.0-universal
 extensions.json
 pkief.material-icon-theme-5.26.0-universal
 ```
