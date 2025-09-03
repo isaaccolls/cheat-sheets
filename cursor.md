@@ -58,6 +58,7 @@ last settings:
 show: `ls -1 /home/isaac/.cursor/extensions | sort`
 
 ```
+dbaeumer.vscode-eslint-3.0.16-universal
 dracula-theme.theme-dracula-2.25.1-universal
 eamodio.gitlens-17.4.1-universal
 extensions.json
