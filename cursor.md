@@ -69,6 +69,7 @@ last settings:
   "terminal.integrated.fontSize": 16,
   "window.commandCenter": true,
   "workbench.colorTheme": "Dracula Theme",
+  "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme"
 }
 ```
