@@ -63,6 +63,8 @@ last settings:
   "editor.renderWhitespace": "all",
   "editor.rulers": [72, 79],
   "editor.wordWrap": "off",
+  "editor.wordWrapColumn": 80,
+  "editor.wrappingIndent": "none",
   "explorer.confirmDragAndDrop": false,
   "git.confirmSync": false,
   "terminal.integrated.fontFamily": "MesloLGS NF",
