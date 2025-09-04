@@ -62,6 +62,7 @@ last settings:
   "editor.formatOnSave": true,
   "editor.renderWhitespace": "all",
   "editor.rulers": [72, 79],
+  "editor.wordWrap": "off",
   "explorer.confirmDragAndDrop": false,
   "git.confirmSync": false,
   "terminal.integrated.fontFamily": "MesloLGS NF",
