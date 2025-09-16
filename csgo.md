@@ -51,9 +51,9 @@
 
 #### userconfig.cfg
 
-create file `/home/isaac/.local/share/Steam/steamapps/common/Half-Life/cstrike/` with the commands:
+create file `userconfig.cfg` on `/home/isaac/.local/share/Steam/steamapps/common/Half-Life/cstrike/` with content:
 
-```
+```sh
 developer 1
 echo "starting to load userconfig..."
 // Crosshair configuration
@@ -61,6 +61,8 @@ cl_crosshair_color "255 0 255"
 cl_crosshair_size "small"
 cl_crosshair_translucent "0"
 cl_dynamiccrosshair "0"
+// show fps
+net_graph 3
 echo "userconfig loaded successfully!!"
 ```
 
