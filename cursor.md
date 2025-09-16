@@ -87,5 +87,8 @@ dracula-theme.theme-dracula-2.25.1-universal
 eamodio.gitlens-17.4.1-universal
 esbenp.prettier-vscode-11.0.0-universal
 extensions.json
-pkief.material-icon-theme-5.26.0-universal
+getpsalm.psalm-vscode-plugin-2.7.0-universal
+mechatroner.rainbow-csv-3.3.0-universal
+oderwat.indent-rainbow-8.3.1-universal
+pkief.material-icon-theme-5.27.0-universal
 ```
