@@ -47,6 +47,10 @@ last settings:
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 80
+  },
   "[php]": {
     "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
   },
@@ -64,7 +68,6 @@ last settings:
   "editor.rulers": [72, 79],
   "editor.wordWrap": "off",
   "editor.wordWrapColumn": 80,
-  "editor.wrappingIndent": "none",
   "explorer.confirmDragAndDrop": false,
   "git.confirmSync": false,
   "terminal.integrated.fontFamily": "MesloLGS NF",
