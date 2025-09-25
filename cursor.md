@@ -35,6 +35,9 @@ last settings:
 
 ```json
 {
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -84,14 +87,18 @@ last settings:
 show: `ls -1 /home/isaac/.cursor/extensions | sort`
 
 ```
+anysphere.cursorpyright-1.0.9
 bmewburn.vscode-intelephense-client-1.14.4-universal
 dbaeumer.vscode-eslint-3.0.16-universal
 dracula-theme.theme-dracula-2.25.1-universal
-eamodio.gitlens-17.4.1-universal
+eamodio.gitlens-17.5.0-universal
+eamodio.gitlens-17.5.1-universal
 esbenp.prettier-vscode-11.0.0-universal
 extensions.json
 getpsalm.psalm-vscode-plugin-2.7.0-universal
 mechatroner.rainbow-csv-3.3.0-universal
+ms-python.debugpy-2025.10.0-linux-x64
+ms-python.python-2025.6.1-linux-x64
 oderwat.indent-rainbow-8.3.1-universal
 pkief.material-icon-theme-5.27.0-universal
 ```
