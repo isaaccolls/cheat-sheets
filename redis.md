@@ -20,11 +20,13 @@
 
 - `redis-cli --tls -h vortex-cache-stg-9cx7z42v-zof5ju.serverless.use1.cache.amazonaws.com -p 6379 get organization:3d7d549b-3fb4-434d-9c2e-e7ab4e9199d1`
 - `redis-cli --tls -h vortex-cache-stg-9cx7z42v-zof5ju.serverless.use1.cache.amazonaws.com -p 6379 get campaign:ced966fb-f1c5-469e-ae12-032279e9fe19`
+- `redis-cli --tls -h vortex-cache-prd-ipqmtaiv-wycuq2.serverless.use1.cache.amazonaws.com -p 6379 get campaign:6ba27c2a-dacf-40c5-adad-46975df8e427`
 - `redis-cli --tls -h vortex-cache-stg-9cx7z42v-zof5ju.serverless.use1.cache.amazonaws.com -p 6379 HGETALL {email_notification_bucket}`
 
 ### delete
 
 - `redis-cli --tls -h vortex-cache-stg-9cx7z42v-zof5ju.serverless.use1.cache.amazonaws.com -p 6379 DEL organization:3d7d549b-3fb4-434d-9c2e-e7ab4e9199d1`
+- `redis-cli --tls -h vortex-cache-prd-ipqmtaiv-wycuq2.serverless.use1.cache.amazonaws.com -p 6379 DEL campaign:6ba27c2a-dacf-40c5-adad-46975df8e427`
 
 ### set
 
