@@ -28,6 +28,7 @@
   - `kubectl delete pods -l app=vortex-executor`
 - show secret: `kubectl get secret request-to-hermes-inbox-consumer-key-1 -o jsonpath="{.data.key}" | base64 --decode`
 - show hpa info `kubectl get hpa vortex-studio-frontend -o yaml`
+- port forward: `kubectl port-forward request-to-hermes-inbox-864d9b54b4-pjn6t 8082:3000`
 
 ## consumo de pods individuales
 
