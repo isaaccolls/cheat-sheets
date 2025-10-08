@@ -29,6 +29,24 @@
 - show secret: `kubectl get secret request-to-hermes-inbox-consumer-key-1 -o jsonpath="{.data.key}" | base64 --decode`
 - show hpa info `kubectl get hpa vortex-studio-frontend -o yaml`
 
+## consumo de pods individuales
+
+- Ver métricas de todos los pods en el namespace actual: `kubectl top pods`
+- Ver métricas de pods específicos del deployment: `kubectl top pods -l app=request-to-hermes-inbox`
+- Ver métricas con más detalles (incluyendo límites y requests): `kubectl top pods --containers`
+- Ver métricas de un pod específico: `kubectl top pod <nombre-del-pod>`
+
+## Para ver el consumo promedio del deployment
+
+- Ver métricas de todos los pods del deployment con labels específicos: `kubectl top pods -l app=request-to-hermes-inbox --no-headers | awk '{cpu+=$2; mem+=$3; count++} END {print "Promedio CPU: " cpu/count "m", "Promedio Memoria: " mem/count "Mi"}'`
+- Ver métricas de todos los pods y calcular promedio manualmente: `kubectl top pods -l app=request-to-hermes-inbox`
+- Ver métricas de nodos: `kubectl top nodes`
+
+## información detallada de recursos:
+
+- Ver requests y limits configurados: `kubectl describe deployment request-to-hermes-inbox`
+- Ver información detallada de los pods: `kubectl describe pods -l app=request-to-hermes-inbox`
+
 ### deletes
 
 ```sh
