@@ -78,11 +78,11 @@ require 'vendor/autoload.php';
 7. set a new ownership for htdocs `sudo chown -R [Username]:[Groupname] /opt/lampp/htdocs`
 8. uninstall
 
-  ```bash
-  cd /opt/lampp
-  sudo ./uninstall
-  # also should delete symbolic links 🤔
-  ```
+```bash
+cd /opt/lampp
+sudo ./uninstall
+# also should delete symbolic links 🤔
+```
 
 ## use xampp
 
@@ -102,4 +102,5 @@ require 'vendor/autoload.php';
   $errorLogMsg = "error info: $errorInfo";
   error_log($errorLogMsg);
   error_log("otra linea de error", 0);
+  error_log(print_r($address), 0);
   ```
