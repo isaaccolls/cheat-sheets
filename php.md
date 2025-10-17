@@ -102,5 +102,6 @@ sudo ./uninstall
   $errorLogMsg = "error info: $errorInfo";
   error_log($errorLogMsg);
   error_log("otra linea de error", 0);
-  error_log(print_r($address), 0);
+  error_log('🚀 GetAddressService->run: ' . json_encode($addressPrimitives), 0); // 👈
+  error_log('🚀🚀 GetAddressService->run: ' . print_r($addressPrimitives, 1), 0);
   ```
