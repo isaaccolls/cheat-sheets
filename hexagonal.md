@@ -200,7 +200,7 @@ Esto lo haremos ya que, por ejemplo, un Video podría contener el identificador 
 
 ## DTOs y desacoplamiento de capas
 
-En arquitectura hexagonal, es preferible que los DTOs reciban cada propiedad de manera individual en lugar de recibir una entidad completa como AddressEntity. Tu implementación actual es correcta.
+En arquitectura hexagonal, es preferible que los DTOs reciban cada propiedad de manera individual en lugar de recibir una entidad completa como AddressEntity
 
 ### ¿Por qué es mejor recibir propiedades individuales?
 
