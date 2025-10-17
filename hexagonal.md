@@ -11,6 +11,7 @@
 - [servicios](#servicios)
   - [Servicios de infraestructura](#servicios-de-infraestructura)
   - [Servicios de Aplicación](#servicios-de-aplicación)
+  - [DTOs y desacoplamiento de capas](#dtos-y-desacoplamiento-de-capas)
   - [Servicios de dominio](#servicios-de-dominio)
   - [Diferencias entre usar Servicios de Dominio y de Infraestructura desde Aplicación](#diferencias-entre-usar-servicios-de-dominio-y-de-infraestructura-desde-aplicación)
 - [Value Objects](#value-objects)
@@ -196,6 +197,30 @@ Esto lo haremos ya que, por ejemplo, un Video podría contener el identificador 
   - Publicarán los eventos de dominio respectivos.
 - Coordinan las llamadas a los distintos elementos de nuestro sistema para ejecutar un determinado caso de uso.
 - Les llamaremos indistintamente Servicio de Aplicación como caso de uso.
+
+## DTOs y desacoplamiento de capas
+
+En arquitectura hexagonal, es preferible que los DTOs reciban cada propiedad de manera individual en lugar de recibir una entidad completa como AddressEntity. Tu implementación actual es correcta.
+
+### ¿Por qué es mejor recibir propiedades individuales?
+
+#### 1. Desacoplamiento de capas
+
+- Los DTOs pertenecen a la capa de Application, mientras que las entidades pertenecen al Domain
+- Recibir la entidad completa crearía una dependencia directa del DTO hacia el Domain
+- Esto violaría el principio de inversión de dependencias en arquitectura hexagonal
+
+#### 2. Flexibilidad y mantenibilidad
+
+- Los DTOs pueden tener una estructura diferente a la entidad
+- Puedes incluir campos calculados, formateados o transformados
+- Es más fácil agregar o quitar campos del DTO sin afectar la entidad
+
+#### 3. Claridad en la interfaz
+
+- Es explícito qué datos necesita el DTO
+- Facilita el testing unitario
+- Hace el código más legible y mantenible
 
 ## Servicios de dominio
 
