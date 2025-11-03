@@ -70,6 +70,9 @@
 - scan for Wi-Fi networks signal strength
   1. Install Necessary Tools: `sudo apt install iw`
   2. Scan for Wi-Fi Networks `sudo iwlist wlan0 scan | grep -E 'SSID|Signal level'`
+- `grep`:
+  - invert selection: `ll | grep -v mp3`
+  - counter: `ll | grep -c mp3`
 
 ## samba
 
