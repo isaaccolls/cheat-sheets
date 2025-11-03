@@ -92,6 +92,7 @@ git config user.email "info@nanhekumar.com"
   - all option: `git fetch --all`
 - Merge. Ubicarse en la rama a partir de la cual se quiere absorber los cambios y ejecutar `git merge [nombre]`
   - prevents merging in a fast-forward way: `git merge --no-ff`
+  - abort merge in progress: `git merge --abort`
 - Cambiar un commit a otra rama `git cherry-pick [SHA1]`
 - Delete local branch `git branch -d the_local_branch`
 - delete all local branches except the current one: `git branch | grep -v "$(git branch --show-current)" | xargs git branch -D`
