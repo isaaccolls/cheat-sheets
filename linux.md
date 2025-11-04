@@ -73,6 +73,7 @@
 - `grep`:
   - invert selection: `ll | grep -v mp3`
   - counter: `ll | grep -c mp3`
+- random UUDI: `uuidgen`
 
 ## samba
 
