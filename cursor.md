@@ -66,6 +66,9 @@ last settings:
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
   "editor.defaultFormatter": null,
   "editor.fontFamily": "'Operator Mono'",
   "editor.fontSize": 16,
@@ -81,7 +84,8 @@ last settings:
   "window.commandCenter": true,
   "workbench.colorTheme": "Dracula Theme",
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "diffEditor.ignoreTrimWhitespace": false
 }
 ```
 
@@ -90,13 +94,13 @@ last settings:
 show: `ls -1 /home/isaac/.cursor/extensions | sort`
 
 ```
-anysphere.cursorpyright-1.0.9
+anysphere.cursorpyright-1.0.10
 bmewburn.vscode-intelephense-client-1.14.4-universal
 dbaeumer.vscode-eslint-3.0.16-universal
 deerawan.vscode-faker-2.0.0-universal
+dotjoshjohnson.xml-2.5.1-universal
 dracula-theme.theme-dracula-2.25.1-universal
-eamodio.gitlens-17.6.1-universal
-eamodio.gitlens-17.6.2-universal
+eamodio.gitlens-17.7.0-universal
 esbenp.prettier-vscode-11.0.0-universal
 extensions.json
 getpsalm.psalm-vscode-plugin-2.7.0-universal
@@ -105,5 +109,5 @@ mechatroner.rainbow-csv-3.3.0-universal
 ms-python.debugpy-2025.14.1-linux-x64
 ms-python.python-2025.6.1-linux-x64
 oderwat.indent-rainbow-8.3.1-universal
-pkief.material-icon-theme-5.27.0-universal
+pkief.material-icon-theme-5.28.0-universal
 ```
