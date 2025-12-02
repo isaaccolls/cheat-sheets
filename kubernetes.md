@@ -26,6 +26,7 @@
 - delete all pods from deployment:
   - `kubectl delete pods --selector=app=[deployment_name]`
   - `kubectl delete pods -l app=vortex-executor`
+  - parallel multiple deployments: `echo "api-gateway vortex-core vortex-executor vortex-scheduler vortex-webhooks" | tr ' ' '\n' | xargs -P 5 -I {} kubectl delete pods -l app={}`
 - show secret: `kubectl get secret request-to-hermes-inbox-consumer-key-1 -o jsonpath="{.data.key}" | base64 --decode`
 - show hpa info `kubectl get hpa vortex-studio-frontend -o yaml`
 - port forward: `kubectl port-forward request-to-hermes-inbox-864d9b54b4-pjn6t 8082:3000`
