@@ -51,6 +51,7 @@ last settings:
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.wordWrap": "off",
     "editor.wordWrapColumn": 80
   },
@@ -68,6 +69,9 @@ last settings:
   },
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.defaultFormatter": null,
