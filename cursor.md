@@ -95,23 +95,22 @@ last settings:
 
 ## extensions
 
-show: `ls -1 /home/isaac/.cursor/extensions | sort`
+show: `jq -r '.[] | "\(.identifier.id)\t\(.version)"' ~/.cursor/extensions/extensions.json | sort | column -t`
 
 ```
-anysphere.cursorpyright-1.0.10
-bmewburn.vscode-intelephense-client-1.16.2-universal
-dbaeumer.vscode-eslint-3.0.16-universal
-deerawan.vscode-faker-2.0.0-universal
-dotjoshjohnson.xml-2.5.1-universal
-dracula-theme.theme-dracula-2.25.1-universal
-eamodio.gitlens-17.7.1-universal
-esbenp.prettier-vscode-11.0.2-universal
-extensions.json
-getpsalm.psalm-vscode-plugin-2.7.0-universal
-hashicorp.terraform-2.37.6-linux-x64
-mechatroner.rainbow-csv-3.3.0-universal
-ms-python.debugpy-2025.14.1-linux-x64
-ms-python.python-2025.6.1-linux-x64
-oderwat.indent-rainbow-8.3.1-universal
-pkief.material-icon-theme-5.29.0-universal
+anysphere.cursorpyright              1.0.10
+bmewburn.vscode-intelephense-client  1.16.4
+dbaeumer.vscode-eslint               3.0.20
+deerawan.vscode-faker                2.0.0
+dotjoshjohnson.xml                   2.5.1
+dracula-theme.theme-dracula          2.25.1
+eamodio.gitlens                      17.9.0
+esbenp.prettier-vscode               11.0.2
+getpsalm.psalm-vscode-plugin         2.7.0
+hashicorp.terraform                  2.37.6
+mechatroner.rainbow-csv              3.3.0
+ms-python.debugpy                    2025.18.0
+ms-python.python                     2025.6.1
+oderwat.indent-rainbow               8.3.1
+pkief.material-icon-theme            5.30.0
 ```
