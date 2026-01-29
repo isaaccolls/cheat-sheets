@@ -9,6 +9,7 @@
 - get all keys: `keys *`
 - set key: `set <keyName> <keyValue>`
 - get key value: `get <keyName>`
+- clear all redis: `FLUSHALL`
 
 ## examples:
 
