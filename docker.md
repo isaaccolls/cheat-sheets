@@ -59,7 +59,7 @@
   - enable on startup: `sudo systemctl enable docker`
 - start: `sudo systemctl start docker`
 - stop: `sudo systemctl stop docker`
-- clean: `docker system prune`
+- clean: `docker system  -a`
 
 # Uninstall Docker CE
 
