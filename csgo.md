@@ -26,8 +26,8 @@
 
 ## commands
 
-- show fps: (in game) `cl_showfps 1` 👈
-- show fps and net: `net_graph 1`
+- show fps: (in game) `cl_showfps 1`
+- show fps and net: `net_graph 3` 👈
 - show mouse sensitivity: `sensitivity`
 - set mouse sensitivity: `sensitivity 2.5`
 - off menu music: `snd_menumusic_volume 0`
