@@ -32,6 +32,7 @@ remove:
 - Files: `@auth.ts` to include a specific file
 - Folders: `@src/components/` to include an entire folder (type `/` after selecting to navigate deeper)
 - Use slash `/` for running some custom agents
+- `@Browser` to work with browser tab
 
 # preferences
 
