@@ -26,6 +26,11 @@ remove:
 - `tab`: Accept suggestion
 - `Ctrl+K`: Open terminal prompt bar
 
+# References
+
+- Use `@Past Chats` to reference previous work in new conversations rather than copy-pasting entire discussions.
+- Use slash `/` for running some custom agents
+
 # preferences
 
 1. Open _Command Palette_: `Ctrl + Shift + P`
