@@ -34,6 +34,122 @@ remove:
 - Use slash `/` for running some custom agents
 - `@Browser` to work with browser tab
 
+# Subagents
+
+Create subagents manually by adding markdown files to .cursor/agents/ (project) or ~/.cursor/agents/ (user).
+
+```md
+Create a subagent file at `.cursor/agents/verifier.md` with YAML frontmatter (name, description) followed by the prompt. The verifier subagent should validate completed work, check that implementations are functional, run tests, and report what passed vs what's incomplete.
+```
+
+```md
+Create a subagent file at `.cursor/agents/security-reviewer.md` with YAML frontmatter containing name and description. The security-reviewer subagent should check code for common vulnerabilities like injection, XSS, and hardcoded secrets.
+```
+
+## File format
+
+Each subagent is a markdown file with YAML frontmatter:
+
+```md
+---
+name: security-auditor
+description: Security specialist. Use when implementing auth, payments, or handling sensitive data.
+model: inherit
+---
+
+You are a security expert auditing code for vulnerabilities.
+
+When invoked:
+
+1. Identify security-sensitive code paths
+2. Check for common vulnerabilities (injection, XSS, auth bypass)
+3. Verify secrets are not hardcoded
+4. Review input validation and sanitization
+
+Report findings by severity:
+
+- Critical (must fix before deploy)
+- High (fix soon)
+- Medium (address when possible)
+```
+
+## Configuration fields
+
+- name: Unique identifier. Use lowercase letters and hyphens. Defaults to **filename without extension**.
+- description: When to use this subagent. Agent reads this to decide delegation.
+- model: Model to use: `fast`, `inherit`, or a specific model ID. Defaults to `inherit`.
+
+## Using subagents
+
+### Automatic delegation
+
+Include phrases like "use proactively" or "always use for" in your description field to encourage automatic delegation.
+
+### Explicit invocation
+
+Request a specific subagent by using the `/name` syntax in your prompt:
+
+```md
+> /verifier confirm the auth flow is complete
+> /debugger investigate this error
+> /security-auditor review the payment module
+```
+
+## Example subagents
+
+### Debugger
+
+```md
+---
+name: debugger
+description: Debugging specialist for errors and test failures. Use when encountering issues.
+---
+
+You are an expert debugger specializing in root cause analysis.
+
+When invoked:
+
+1. Capture error message and stack trace
+2. Identify reproduction steps
+3. Isolate the failure location
+4. Implement minimal fix
+5. Verify solution works
+
+For each issue, provide:
+
+- Root cause explanation
+- Evidence supporting the diagnosis
+- Specific code fix
+- Testing approach
+
+Focus on fixing the underlying issue, not symptoms.
+```
+
+### Test runner
+
+```md
+---
+name: test-runner
+description: Test automation expert. Use proactively to run tests and fix failures.
+---
+
+You are a test automation expert.
+When you see code changes, proactively run appropriate tests.
+
+If tests fail:
+
+1. Analyze the failure output
+2. Identify the root cause
+3. Fix the issue while preserving test intent
+4. Re-run to verify
+
+Report test results with:
+
+- Number of tests passed/failed
+- Summary of any failures
+- Changes made to fix issues
+```
+
 # preferences
 
 1. Open _Command Palette_: `Ctrl + Shift + P`
