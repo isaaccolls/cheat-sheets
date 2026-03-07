@@ -150,6 +150,43 @@ Report test results with:
 - Changes made to fix issues
 ```
 
+## Rules
+
+Rules provide system-level instructions to Agent. They bundle prompts, scripts, and more together.
+
+`/create-rule` in chat: Type `/create-rule` in Agent and describe what you want. Agent generates the rule file with proper frontmatter and saves it to `.cursor/rules`.
+
+### Project Rules
+
+Project rules live in `.cursor/rules` as markdown files and are version-controlled.
+
+- Encode domain-specific knowledge about your codebase
+- Automate project-specific workflows or templates
+- Standardize style or architecture decisions
+
+### Rule file structure
+
+```md
+.cursor/rules/
+├── react-patterns.mdc # Rule with frontmatter (description, globs)
+├── api-guidelines.md # Simple markdown rule
+├── frontend/ # Organize rules in folders
+....├── components.md
+```
+
+### Rule anatomy
+
+Each rule is a markdown file with _frontmatter metadata_ and _content_. Control how rules are applied from the type dropdown which changes properties `description`, `globs`, `alwaysApply`.
+
+```md
+---
+description: "This rule provides standards for frontend components and API validation"
+alwaysApply: false
+---
+
+...rest of the rule content
+```
+
 # preferences
 
 1. Open _Command Palette_: `Ctrl + Shift + P`
