@@ -234,6 +234,7 @@ last settings:
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "cursor.composer.usageSummaryDisplay": "always",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.defaultFormatter": null,
   "editor.fontFamily": "'Operator Mono'",
