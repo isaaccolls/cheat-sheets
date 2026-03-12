@@ -4,8 +4,12 @@
   - [samba](#samba)
   - [linux kernel version](#linux-kernel-version)
   - [terminator](#terminator)
+    - [custom config](#custom-config)
+    - [set as default](#set-as-default)
   - [youtube-dl](#youtube-dl)
   - [compress](#compress)
+    - [tar](#tar)
+    - [zip](#zip)
   - [flatpak](#flatpak)
 - [permissions](#permissions)
 - [install custom apps](#install-custom-apps)
@@ -17,6 +21,17 @@
 - [after install](#after-install)
   - [install](#install)
 - [dbeaver](#dbeaver)
+  - [zsh](#zsh)
+    - [oh my zsh](#oh-my-zsh)
+    - [power level](#power-level)
+      - [plugins](#plugins)
+  - [open razer](#open-razer)
+  - [libre office](#libre-office)
+  - [Music edition](#music-edition)
+    - [tuxguitar](#tuxguitar)
+    - [MuseScore](#musescore)
+  - [nvidia](#nvidia)
+  - [sensors](#sensors)
   - [themes](#themes)
   - [sport camera as webcam](#sport-camera-as-webcam)
   - [fix opera bug](#fix-opera-bug)
@@ -371,7 +386,7 @@ X-GNOME-Autostart-enabled=true
   - show: `gsettings list-recursively | grep -i emoji`
   - set (if DBUS_SESSION_BUS_ADDRESS is empty, configure it first):
     1. Configure DBUS_SESSION_BUS_ADDRESS (systemd): `export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/$(id -u)/bus"`
-    1. Then set favorites: `gsettings set org.freedesktop.ibus.panel.emoji favorites "['°', 'ñ', 'Ñ', '🙂', '😯', '😬', '😘', '🤔', '🤯', '😍', '🥹', '😎', '😉', '😕', '🫣', '🤣', '😫', '🥺', '🤓', '😅', '😦', '😳', '😒', '😝', '😴', '😏', '🙁', '😞', '😨', '🥲', '🤤', '🤑', '🥳', '🤮', '🙈', '💩', '☠️', '🥵', '🥶', '🤡', '👽', '😈', '🤦', '🤷', '👀', '🤙', '✌️', '👍', '👎', '👉', '👈', '☝️', '👇', '👌', '🙏', '🙌', '🤘', '🫶', '💪', '💅', '❤️', '💔', '🐢', '🐶', '🍁', '🏔️', '🏖️', '🍭', '🍹', '🍄', '🍻', '🏄', '🏂', '📺', '🔍', '🔫', '💡', '🎵', '🚜', '🔥', '🚀', '✅', '❌', '⚠️']"`
+    2. Then set favorites: `gsettings set org.freedesktop.ibus.panel.emoji favorites "['°', 'ñ', 'Ñ', '🙂', '😯', '😬', '😘', '🤔', '🤯', '😍', '🥹', '😎', '😉', '😕', '🫣', '🤣', '😫', '🥺', '🤓', '😅', '😦', '😳', '😒', '😝', '😴', '😏', '🙁', '😞', '😨', '🥲', '🤤', '🤑', '🥳', '🤮', '🥷', '🙈', '💩', '☠️', '🥵', '🥶', '🤡', '👽', '😈', '🤦', '🤷', '👀', '🤙', '✌️', '👍', '👎', '👉', '👈', '☝️', '👇', '👌', '🙏', '🙌', '🤘', '🫶', '💪', '💅', '❤️', '💔', '🐢', '🐶', '🍁', '🏔️', '🏖️', '🍭', '🍹', '🍄', '🍻', '🏄', '🏂', '📺', '🔍', '🔫', '💡', '🎵', '🎶', '🚜', '🔥', '🚀', '✅', '❌', '⚠️', '💯', '🆘']"`
 
 # sreencast
 
