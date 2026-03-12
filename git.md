@@ -56,6 +56,7 @@ git config user.email "info@nanhekumar.com"
 - change a remote git repository `git remote set-url origin git@your.git.repo.example.com:user/repository2.git`
 - pull: `git pull <remote> <branch>`
   - accept all incoming: `git pull -X theirs`
+- cambiar autor del ultimo commit `git commit --amend --author="Isaac Colls <isaac.colls@cencosud.cl>"`
 
 ## Versionar proyecto
 
