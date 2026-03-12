@@ -491,4 +491,3 @@ Regla práctica: 👉 si algo es **lo bastante complejo** como para romper produ
 - un ADR
 - un diagrama asociado
 - y, si aplica, un runbook de incidentes
-```
