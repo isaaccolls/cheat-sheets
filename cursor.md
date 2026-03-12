@@ -266,13 +266,15 @@ dbaeumer.vscode-eslint               3.0.24
 deerawan.vscode-faker                2.0.0
 dotjoshjohnson.xml                   2.5.1
 dracula-theme.theme-dracula          2.25.1
-eamodio.gitlens                      17.11.0
+eamodio.gitlens                      17.11.1
 esbenp.prettier-vscode               11.0.2
 getpsalm.psalm-vscode-plugin         2.7.0
 hashicorp.terraform                  2.39.0
+hediet.vscode-drawio                 1.6.6
 mechatroner.rainbow-csv              3.24.1
 ms-python.debugpy                    2025.18.0
 ms-python.python                     2025.6.1
 oderwat.indent-rainbow               8.3.1
 pkief.material-icon-theme            5.32.0
+yzhang.markdown-all-in-one           3.6.2
 ```
