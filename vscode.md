@@ -25,7 +25,7 @@
 - errors and warnnings navigate `f8`
 - custom
   - icons `file icon theme`
-- show integrated terminal `` ctrl + \`  ``
+- show integrated terminal ``ctrl + \` ``
 - find `ctrl + f` replace `ctrl + h`
 - markdown preview `ctrl + shift + v`
 - split editor `ctrl+\`
@@ -48,7 +48,7 @@
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
   "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[ignore]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -67,11 +67,6 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "other": "off",
-      "strings": "off"
-    },
     "editor.wordWrap": "off",
     "editor.wordWrapColumn": 80
   },
@@ -104,17 +99,23 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[xml]": {
+    "editor.defaultFormatter": "DotJoshJohnson.xml"
+  },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "chat.instructionsFilesLocations": {
     ".github/instructions": true,
-    "/tmp/postman-collections-post-response.instructions.md": true,
-    "/tmp/postman-collections-pre-request.instructions.md": true,
-    "/tmp/postman-folder-post-response.instructions.md": true,
-    "/tmp/postman-folder-pre-request.instructions.md": true,
-    "/tmp/postman-http-request-post-response.instructions.md": true,
-    "/tmp/postman-http-request-pre-request.instructions.md": true
+    ".claude/rules": true,
+    "~/.copilot/instructions": true,
+    "~/.claude/rules": true,
+    "../../../../tmp/postman-collections-post-response.instructions.md": true,
+    "../../../../tmp/postman-collections-pre-request.instructions.md": true,
+    "../../../../tmp/postman-folder-post-response.instructions.md": true,
+    "../../../../tmp/postman-folder-pre-request.instructions.md": true,
+    "../../../../tmp/postman-http-request-post-response.instructions.md": true,
+    "../../../../tmp/postman-http-request-pre-request.instructions.md": true
   },
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -123,7 +124,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": null,
   "editor.fontFamily": "'Operator Mono'",
   "editor.fontSize": 16,
   "editor.formatOnSave": true,
@@ -134,6 +135,7 @@
   "editor.rulers": [72, 79],
   "editor.tabSize": 2,
   "editor.wordWrap": "off",
+  "editor.wordWrapColumn": 80,
   "eslint.format.enable": true,
   "eslint.validate": [
     "javascript",
@@ -161,15 +163,15 @@
     "jupyter-notebook": "left"
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1750807991304,
+  "php-cs-fixer.lastDownload": 1753841651255,
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "security.workspace.trust.untrustedFiles": "open",
-  "sonarlint.ls.javaHome": "/usr/lib/jvm/jdk-21-oracle-x64",
   "terminal.integrated.defaultProfile.linux": "zsh",
   "terminal.integrated.fontFamily": "MesloLGS NF",
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 16,
   "terminal.integrated.fontWeightBold": "normal",
   "terminal.integrated.tabs.enabled": true,
+  "window.commandCenter": true,
   "workbench.colorCustomizations": {},
   "workbench.colorTheme": "Dracula Theme",
   "workbench.editor.enablePreview": false,
@@ -180,7 +182,8 @@
     "*.sql": "default",
     "git-rebase-todo": "gitlens.rebase"
   },
-  "workbench.iconTheme": "vscode-icons"
+  "workbench.iconTheme": "material-icon-theme",
+  "github.copilot.nextEditSuggestions.enabled": true
 }
 ```
 
@@ -192,6 +195,7 @@ backup: `code --list-extensions | xargs -L 1 echo code --install-extension`
 code --list-extensions | xargs -L 1 echo code --install-extension
 code --install-extension adpyke.codesnap
 code --install-extension ahmadalli.vscode-nginx-conf
+code --install-extension anthropic.claude-code
 code --install-extension astro-build.astro-vscode
 code --install-extension atdushi.conky
 code --install-extension bmewburn.vscode-intelephense-client
@@ -200,6 +204,7 @@ code --install-extension codestream.codestream
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension deerawan.vscode-faker
 code --install-extension docker.docker
+code --install-extension dotjoshjohnson.xml
 code --install-extension dracula-theme.theme-dracula
 code --install-extension eamodio.gitlens
 code --install-extension esbenp.prettier-vscode
@@ -208,8 +213,6 @@ code --install-extension foxundermoon.shell-format
 code --install-extension genieai.chatgpt-vscode
 code --install-extension getpsalm.psalm-vscode-plugin
 code --install-extension gitduck.code-streaming
-code --install-extension github.copilot
-code --install-extension github.copilot-chat
 code --install-extension github.vscode-github-actions
 code --install-extension hashicorp.terraform
 code --install-extension hediet.vscode-drawio
@@ -228,6 +231,7 @@ code --install-extension ms-python.debugpy
 code --install-extension ms-python.isort
 code --install-extension ms-python.python
 code --install-extension ms-python.vscode-pylance
+code --install-extension ms-python.vscode-python-envs
 code --install-extension ms-toolsai.jupyter
 code --install-extension ms-toolsai.jupyter-keymap
 code --install-extension ms-toolsai.jupyter-renderers
@@ -236,6 +240,7 @@ code --install-extension ms-toolsai.vscode-jupyter-slideshow
 code --install-extension ms-vscode-remote.remote-containers
 code --install-extension ms-vscode-remote.remote-ssh-edit
 code --install-extension ms-vscode.cmake-tools
+code --install-extension ms-vscode.cpp-devtools
 code --install-extension ms-vscode.cpptools
 code --install-extension ms-vscode.cpptools-extension-pack
 code --install-extension ms-vscode.cpptools-themes
@@ -248,6 +253,7 @@ code --install-extension nrwl.angular-console
 code --install-extension octref.vetur
 code --install-extension oderwat.indent-rainbow
 code --install-extension perkovec.emoji
+code --install-extension pkief.material-icon-theme
 code --install-extension postman.postman-for-vscode
 code --install-extension raynigon.nginx-formatter
 code --install-extension redhat.vscode-yaml
