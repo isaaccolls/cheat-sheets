@@ -1,6 +1,8 @@
 - [short cuts](#short-cuts)
 - [settings](#settings)
 - [extensions](#extensions)
+  - [ENABLED](#enabled)
+  - [DISABLED](#disabled)
 
 # short cuts
 
@@ -106,17 +108,18 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "chat.instructionsFilesLocations": {
-    ".github/instructions": true,
-    ".claude/rules": true,
-    "~/.copilot/instructions": true,
-    "~/.claude/rules": true,
     "../../../../tmp/postman-collections-post-response.instructions.md": true,
     "../../../../tmp/postman-collections-pre-request.instructions.md": true,
     "../../../../tmp/postman-folder-post-response.instructions.md": true,
     "../../../../tmp/postman-folder-pre-request.instructions.md": true,
     "../../../../tmp/postman-http-request-post-response.instructions.md": true,
-    "../../../../tmp/postman-http-request-pre-request.instructions.md": true
+    "../../../../tmp/postman-http-request-pre-request.instructions.md": true,
+    ".claude/rules": true,
+    ".github/instructions": true,
+    "~/.claude/rules": true,
+    "~/.copilot/instructions": true
   },
+  "claudeCode.preferredLocation": "panel",
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.accessibilitySupport": "off",
@@ -156,6 +159,7 @@
     "plaintext": false,
     "scminput": false
   },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "hediet.vscode-drawio.resizeImages": null,
   "markdown.extension.toc.levels": "1..2",
   "notebook.cellToolbarLocation": {
@@ -172,6 +176,7 @@
   "terminal.integrated.fontWeightBold": "normal",
   "terminal.integrated.tabs.enabled": true,
   "window.commandCenter": true,
+  "window.zoomLevel": 0,
   "workbench.colorCustomizations": {},
   "workbench.colorTheme": "Dracula Theme",
   "workbench.editor.enablePreview": false,
@@ -182,86 +187,85 @@
     "*.sql": "default",
     "git-rebase-todo": "gitlens.rebase"
   },
-  "workbench.iconTheme": "material-icon-theme",
-  "github.copilot.nextEditSuggestions.enabled": true
+  "workbench.iconTheme": "material-icon-theme"
 }
 ```
 
 # extensions
 
-backup: `code --list-extensions | xargs -L 1 echo code --install-extension`
+## ENABLED
 
-```sh
-code --list-extensions | xargs -L 1 echo code --install-extension
-code --install-extension adpyke.codesnap
-code --install-extension ahmadalli.vscode-nginx-conf
-code --install-extension anthropic.claude-code
-code --install-extension astro-build.astro-vscode
-code --install-extension atdushi.conky
-code --install-extension bmewburn.vscode-intelephense-client
-code --install-extension bradymholt.pgformatter
-code --install-extension codestream.codestream
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension deerawan.vscode-faker
-code --install-extension docker.docker
-code --install-extension dotjoshjohnson.xml
-code --install-extension dracula-theme.theme-dracula
-code --install-extension eamodio.gitlens
-code --install-extension esbenp.prettier-vscode
-code --install-extension firsttris.vscode-jest-runner
-code --install-extension foxundermoon.shell-format
-code --install-extension genieai.chatgpt-vscode
-code --install-extension getpsalm.psalm-vscode-plugin
-code --install-extension gitduck.code-streaming
-code --install-extension github.vscode-github-actions
-code --install-extension hashicorp.terraform
-code --install-extension hediet.vscode-drawio
-code --install-extension humao.rest-client
-code --install-extension junstyle.php-cs-fixer
-code --install-extension matt-meyers.vscode-dbml
-code --install-extension mechatroner.rainbow-csv
-code --install-extension mikestead.dotenv
-code --install-extension mintlify.document
-code --install-extension mrmlnc.vscode-apache
-code --install-extension ms-azuretools.vscode-containers
-code --install-extension ms-azuretools.vscode-docker
-code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
-code --install-extension ms-python.autopep8
-code --install-extension ms-python.debugpy
-code --install-extension ms-python.isort
-code --install-extension ms-python.python
-code --install-extension ms-python.vscode-pylance
-code --install-extension ms-python.vscode-python-envs
-code --install-extension ms-toolsai.jupyter
-code --install-extension ms-toolsai.jupyter-keymap
-code --install-extension ms-toolsai.jupyter-renderers
-code --install-extension ms-toolsai.vscode-jupyter-cell-tags
-code --install-extension ms-toolsai.vscode-jupyter-slideshow
-code --install-extension ms-vscode-remote.remote-containers
-code --install-extension ms-vscode-remote.remote-ssh-edit
-code --install-extension ms-vscode.cmake-tools
-code --install-extension ms-vscode.cpp-devtools
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-vscode.cpptools-extension-pack
-code --install-extension ms-vscode.cpptools-themes
-code --install-extension ms-vscode.makefile-tools
-code --install-extension ms-vscode.vscode-speech
-code --install-extension mtxr.sqltools
-code --install-extension nhoizey.gremlins
-code --install-extension nicolas-liger.dbml-viewer
-code --install-extension nrwl.angular-console
-code --install-extension octref.vetur
-code --install-extension oderwat.indent-rainbow
-code --install-extension perkovec.emoji
-code --install-extension pkief.material-icon-theme
-code --install-extension postman.postman-for-vscode
-code --install-extension raynigon.nginx-formatter
-code --install-extension redhat.vscode-yaml
-code --install-extension sonarsource.sonarlint-vscode
-code --install-extension tobermory.es6-string-html
-code --install-extension tsandall.opa
-code --install-extension unifiedjs.vscode-mdx
-code --install-extension vscode-icons-team.vscode-icons
-code --install-extension yzane.markdown-pdf
-code --install-extension yzhang.markdown-all-in-one
-```
+- adpyke.codesnap
+- ahmadalli.vscode-nginx-conf
+- anthropic.claude-code
+- astro-build.astro-vscode
+- atdushi.conky
+- bmewburn.vscode-intelephense-client
+- bradymholt.pgformatter
+- dbaeumer.vscode-eslint
+- deerawan.vscode-faker
+- docker.docker
+- dotjoshjohnson.xml
+- dracula-theme.theme-dracula
+- eamodio.gitlens
+- esbenp.prettier-vscode
+- firsttris.vscode-jest-runner
+- foxundermoon.shell-format
+- github.vscode-github-actions
+- hashicorp.terraform
+- hediet.vscode-drawio
+- junstyle.php-cs-fixer
+- matt-meyers.vscode-dbml
+- mechatroner.rainbow-csv
+- mikestead.dotenv
+- mrmlnc.vscode-apache
+- ms-azuretools.vscode-containers
+- ms-azuretools.vscode-docker
+- ms-kubernetes-tools.vscode-kubernetes-tools
+- ms-python.autopep8
+- ms-python.debugpy
+- ms-python.isort
+- ms-python.python
+- ms-python.vscode-pylance
+- ms-python.vscode-python-envs
+- ms-toolsai.jupyter
+- ms-toolsai.jupyter-keymap
+- ms-toolsai.jupyter-renderers
+- ms-toolsai.vscode-jupyter-cell-tags
+- ms-toolsai.vscode-jupyter-slideshow
+- ms-vscode.cmake-tools
+- ms-vscode.cpp-devtools
+- ms-vscode.cpptools
+- ms-vscode.cpptools-extension-pack
+- ms-vscode.cpptools-themes
+- ms-vscode.makefile-tools
+- ms-vscode.vscode-speech
+- nhoizey.gremlins
+- nicolas-liger.dbml-viewer
+- octref.vetur
+- pkief.material-icon-theme
+- raynigon.nginx-formatter
+- tobermory.es6-string-html
+- vscode-icons-team.vscode-icons
+- yzhang.markdown-all-in-one
+
+## DISABLED
+
+- codestream.codestream
+- genieai.chatgpt-vscode
+- getpsalm.psalm-vscode-plugin
+- gitduck.code-streaming
+- humao.rest-client
+- mintlify.document
+- ms-vscode-remote.remote-containers
+- ms-vscode-remote.remote-ssh-edit
+- mtxr.sqltools
+- nrwl.angular-console
+- oderwat.indent-rainbow
+- perkovec.emoji
+- postman.postman-for-vscode
+- redhat.vscode-yaml
+- sonarsource.sonarlint-vscode
+- tsandall.opa
+- unifiedjs.vscode-mdx
+- yzane.markdown-pdf
