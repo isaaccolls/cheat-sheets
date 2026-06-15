@@ -11,6 +11,7 @@
 - [Branch naming conventions](#branch-naming-conventions)
   - [Git branch prefixes](#git-branch-prefixes)
   - [Example of branch naming in action](#example-of-branch-naming-in-action)
+- [local https workaround](#local-https-workaround)
 
 # generating SSH keys
 
@@ -18,7 +19,8 @@
 
 # config
 
-- list: `git config --global --list`
+- show global config: `git config --global --list`
+- show local config: `git config --local --list`
 - email: `git config -global user.email your@email.com`
 - name: `git config -global user.name "Nombre Apellido"`
 - .gitignore alternative: `.git/info/exclude`
@@ -143,3 +145,12 @@ git checkout -b release/v2.0.0
 # Preparing a hotfix
 git checkout -b hotfix/reset-password-fix
 ```
+
+# local https workaround
+
+1. Create Personal Access Token (PAT) en github on _GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) → Generate new token_
+   - **Scope**: `repo`
+2. on repo run `git config --local credential.helper 'store --file .git/credentials'`
+3. regular push `git push origin master`
+   - Username: `isaaccolls`
+   - Password: paste the **PAT**
