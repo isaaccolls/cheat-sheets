@@ -4,12 +4,8 @@
   - [samba](#samba)
   - [linux kernel version](#linux-kernel-version)
   - [terminator](#terminator)
-    - [custom config](#custom-config)
-    - [set as default](#set-as-default)
   - [youtube-dl](#youtube-dl)
   - [compress](#compress)
-    - [tar](#tar)
-    - [zip](#zip)
   - [flatpak](#flatpak)
 - [permissions](#permissions)
 - [install custom apps](#install-custom-apps)
@@ -21,17 +17,6 @@
 - [after install](#after-install)
   - [install](#install)
 - [dbeaver](#dbeaver)
-  - [zsh](#zsh)
-    - [oh my zsh](#oh-my-zsh)
-    - [power level](#power-level)
-      - [plugins](#plugins)
-  - [open razer](#open-razer)
-  - [libre office](#libre-office)
-  - [Music edition](#music-edition)
-    - [tuxguitar](#tuxguitar)
-    - [MuseScore](#musescore)
-  - [nvidia](#nvidia)
-  - [sensors](#sensors)
   - [themes](#themes)
   - [sport camera as webcam](#sport-camera-as-webcam)
   - [fix opera bug](#fix-opera-bug)
@@ -39,6 +24,7 @@
   - [run script when usb plugged in](#run-script-when-usb-plugged-in)
 - [emoji](#emoji)
 - [sreencast](#sreencast)
+- [gpg keys](#gpg-keys)
 
 # actual machine
 
@@ -393,3 +379,10 @@ X-GNOME-Autostart-enabled=true
 - kill it: `kill $(ps aux | grep gjs | grep Screencast | grep -v 'grep' | awk '{print $2}')`
 - record from terminal: `ffmpeg -video_size 1920x1080 -framerate 30 -f x11grab -i $DISPLAY file_name.mp4`
   - widescreen: `ffmpeg -video_size 2560x1080 -framerate 30 -f x11grab -i $DISPLAY file_name.mp4`
+
+# gpg keys
+
+- list keys: `gpg --list-keys`
+- list secrets: `gpg --list-secret-keys --keyid-format LONG`
+- delete private key gpg: `gpg --delete-secret-keys <KEY_ID>`
+- delete public key gpg: `gpg --delete-keys <KEY_ID>`
