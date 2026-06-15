@@ -12,6 +12,7 @@
   - [Git branch prefixes](#git-branch-prefixes)
   - [Example of branch naming in action](#example-of-branch-naming-in-action)
 - [local https workaround](#local-https-workaround)
+  - [disable gpg sign](#disable-gpg-sign)
 
 # generating SSH keys
 
@@ -154,3 +155,9 @@ git checkout -b hotfix/reset-password-fix
 3. regular push `git push origin master`
    - Username: `isaaccolls`
    - Password: paste the **PAT**
+
+## disable gpg sign
+
+- local `git config --local commit.gpgsign false`
+- check: `git config --local commit.gpgsign false`
+- global `git config --global commit.gpgsign false`
