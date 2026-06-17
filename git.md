@@ -159,5 +159,5 @@ git checkout -b hotfix/reset-password-fix
 ## disable gpg sign
 
 - local `git config --local commit.gpgsign false`
-- check: `git config --local commit.gpgsign false`
+- check: `git config --show-origin commit.gpgsign`
 - global `git config --global commit.gpgsign false`
