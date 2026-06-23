@@ -84,6 +84,7 @@ git config user.email "info@nanhekumar.com"
 - reset one file 👽 `git checkout -- [file]`
 - extract file from staging `git reset [file]`
 - rebase: `git rebase -i HEAD~9`
+- Traé TODOS los cambios de la rama vieja, sin sus commits: `git merge --squash [branch-name]`
 
 ## Branches
 
