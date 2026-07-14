@@ -108,17 +108,24 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "chat.instructionsFilesLocations": {
+    ".github/instructions": true,
+    ".claude/rules": true,
+    "~/.copilot/instructions": true,
+    "~/.claude/rules": true,
     "../../../../tmp/postman-collections-post-response.instructions.md": true,
     "../../../../tmp/postman-collections-pre-request.instructions.md": true,
     "../../../../tmp/postman-folder-post-response.instructions.md": true,
     "../../../../tmp/postman-folder-pre-request.instructions.md": true,
     "../../../../tmp/postman-http-request-post-response.instructions.md": true,
     "../../../../tmp/postman-http-request-pre-request.instructions.md": true,
-    ".claude/rules": true,
-    ".github/instructions": true,
-    "~/.claude/rules": true,
-    "~/.copilot/instructions": true
+    "/tmp/postman-collections-post-response.instructions.md": true,
+    "/tmp/postman-collections-pre-request.instructions.md": true,
+    "/tmp/postman-folder-post-response.instructions.md": true,
+    "/tmp/postman-folder-pre-request.instructions.md": true,
+    "/tmp/postman-http-request-post-response.instructions.md": true,
+    "/tmp/postman-http-request-pre-request.instructions.md": true
   },
+  "chat.useClaudeMdFile": true,
   "claudeCode.preferredLocation": "panel",
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -167,7 +174,7 @@
     "jupyter-notebook": "left"
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1753841651255,
+  "php-cs-fixer.lastDownload": 1783823515954,
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.linux": "zsh",
@@ -187,7 +194,8 @@
     "*.sql": "default",
     "git-rebase-todo": "gitlens.rebase"
   },
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "isort.interpreter": ["python3"]
 }
 ```
 
@@ -251,6 +259,7 @@
 
 ## DISABLED
 
+- chakrounanas.turbo-console-log
 - codestream.codestream
 - genieai.chatgpt-vscode
 - getpsalm.psalm-vscode-plugin
