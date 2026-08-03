@@ -174,7 +174,7 @@
     "jupyter-notebook": "left"
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1783823515954,
+  "php-cs-fixer.lastDownload": 1785277240760,
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.linux": "zsh",
@@ -195,7 +195,8 @@
     "git-rebase-todo": "gitlens.rebase"
   },
   "workbench.iconTheme": "material-icon-theme",
-  "isort.interpreter": ["python3"]
+  "isort.interpreter": ["python3"],
+  "python.terminal.useEnvFile": false
 }
 ```
 
