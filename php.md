@@ -1,10 +1,19 @@
 - [install](#install)
 - [built-in web server](#built-in-web-server)
 - [code standard guide](#code-standard-guide)
+  - [PHP_CodeSniffer](#php_codesniffer)
 - [composer](#composer)
+  - [install](#install-1)
+  - [use](#use)
+  - [tell PHP to use Composer's autoloader](#tell-php-to-use-composers-autoloader)
 - [testing](#testing)
 - [docker](#docker)
 - [xampp](#xampp)
+  - [install xampp](#install-xampp)
+  - [use xampp](#use-xampp)
+  - [logs](#logs)
+- [Psalm/PHPStan](#psalmphpstan)
+  - [arrays](#arrays)
 
 # install
 
@@ -105,3 +114,19 @@ sudo ./uninstall
   error_log('🚀 GetAddressService->run: ' . json_encode($addressPrimitives), 0); // 👈
   error_log('🚀🚀 GetAddressService->run: ' . print_r($addressPrimitives, 1), 0);
   ```
+
+# Psalm/PHPStan
+
+## arrays
+
+Tienen dos sintaxis de array types diferentes:
+
+1. `array<TKey, TValue>` — array genérico (lista/colección)
+
+`array<int, array{id: string, title: string, values: ...}>`
+Esto dice: "un array indexado por `int`, donde cada elemento tiene esa forma `{id, title, values}`". Es homogéneo — todos los elementos comparten el mismo tipo. Es el equivalente a una lista/colección de N elementos iguales, tipo `Attribute[]` en otros lenguajes.
+
+2. `array{key: Type, ...}` — array shape (forma fija, tipo "objeto")
+
+`array{attributes: array<int, array{...}>}`
+Esto dice: "un array con una clave string conocida y fija, `attributes`, cuyo valor es el array genérico de arriba". Es heterogéneo por definición — cada clave puede tener un tipo distinto (aunque aquí solo hay una clave). Es el equivalente a un struct/objeto con propiedades nombradas.
