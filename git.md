@@ -13,6 +13,7 @@
   - [Example of branch naming in action](#example-of-branch-naming-in-action)
 - [local https workaround](#local-https-workaround)
   - [disable gpg sign](#disable-gpg-sign)
+- [rollback](#rollback)
 
 # generating SSH keys
 
@@ -162,3 +163,13 @@ git checkout -b hotfix/reset-password-fix
 - local `git config --local commit.gpgsign false`
 - check: `git config --show-origin commit.gpgsign`
 - global `git config --global commit.gpgsign false`
+
+# rollback
+
+```sh
+git checkout master
+git checkout -b rollback/v2.0.9
+git checkout 87b7fce -- .
+git commit -m "revert: rollback contenido de master a v2.0.9 (87b7fce)"
+git push origin rollback/v2.0.9
+```
