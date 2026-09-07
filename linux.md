@@ -25,6 +25,7 @@
 - [emoji](#emoji)
 - [sreencast](#sreencast)
 - [gpg keys](#gpg-keys)
+- [remote desktop](#remote-desktop)
 
 # actual machine
 
@@ -386,3 +387,7 @@ X-GNOME-Autostart-enabled=true
 - list secrets: `gpg --list-secret-keys --keyid-format LONG`
 - delete private key gpg: `gpg --delete-secret-keys <KEY_ID>`
 - delete public key gpg: `gpg --delete-keys <KEY_ID>`
+
+# remote desktop
+
+from: `ControlRight` to: `MetaLeft`
