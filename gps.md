@@ -13,6 +13,7 @@ Lista de comandos SMS **completa y confirmada** contra el manual oficial de fáb
 7. `TIMER,666666,,segundos#` — intervalo de subida de posición (default 15s)
 8. `GMT,666666,E_o_W,codigo#` — huso horario
 9. `FACTORY,666666#` — reset de fábrica (NO borra IP/puerto/DNS/clave)
+10. `STATUS,666666#` - Check status
 
 ## initial
 
