@@ -20,7 +20,7 @@
     - posicion:
     - neblinero:
 - trasera:
-  - stop
-  - cruce
-  - freno
-  - 3er stop
+  - stop:
+  - cruce:
+  - freno:
+  - 3er stop:
