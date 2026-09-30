@@ -8,3 +8,19 @@
 # horn
 
 - [bocina de Caracol de paso alto y bajo](https://es.aliexpress.com/item/1005007347335661.html)
+
+# luces
+
+- frontal:
+  - posicion:
+  - baja:
+  - alta:
+  - cruce:
+  - neblinero:
+    - posicion:
+    - neblinero:
+- trasera:
+  - stop
+  - cruce
+  - freno
+  - 3er stop
