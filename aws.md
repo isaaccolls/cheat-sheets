@@ -1,8 +1,9 @@
 - [lambda](#lambda)
   - [python](#python)
 - [ec2](#ec2)
-- [s3](#s3)
-- [secrets manager](#secrets-manager)
+- [aws cli](#aws-cli)
+  - [s3](#s3)
+  - [secrets manager](#secrets-manager)
 
 # lambda
 
@@ -28,13 +29,15 @@
 - **user-data** logs: `sudo cat /var/log/cloud-init-output.log`
 - **user-data** script: `sudo cat /var/lib/cloud/instances/i-420/user-data.txt`
 
-# s3
+# aws cli
+
+## s3
 
 - list: `aws s3 ls s3://cencosud.prod.ccom.cl.enriched/vortex/Chile/Jumbo-Prime/year=2024/month=12/day=24/`
 - remove something form bucket: `aws s3 rm s3://cencosud.prod.ccom.cl.raw/vortex/year=2024/month=11/day=13/aux0/events.csv`
 - copy: `aws s3 cp s3://cencosud.prod.ccom.cl.enriched/vortex/Chile/Jumbo-Prime/year=2024/month=12/day=24/ s3://cencosud.prod.ccom.cl.enriched/vortex/Chile/Jumbo-Prime/year=2024/month=12/day=24-real/ --recursive`
 
-# secrets manager
+## secrets manager
 
 - list secrets: `aws secretsmanager list-secrets`
 - get secret value: `aws secretsmanager get-secret-value --secret-id cl_connect_vortex_core`
