@@ -24,3 +24,8 @@
   - cruce:
   - freno:
   - 3er stop:
+
+# ruedas
+
+- neumaticos: 235/75R15 BF GOODRICH ALL-TERRAIN KO3
+- llantas: 5x8"
