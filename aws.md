@@ -4,6 +4,7 @@
 - [aws cli](#aws-cli)
   - [s3](#s3)
   - [secrets manager](#secrets-manager)
+  - [ses](#ses)
 
 # lambda
 
@@ -41,3 +42,20 @@
 
 - list secrets: `aws secretsmanager list-secrets`
 - get secret value: `aws secretsmanager get-secret-value --secret-id cl_connect_vortex_core`
+
+## ses
+
+- Listar todas las direcciones suprimidas: `aws sesv2 list-suppressed-destinations --region us-east-1`
+  - Filtrar por motivo (BOUNCE o COMPLAINT): `aws sesv2 list-suppressed-destinations --reasons BOUNCE --region us-east-1`
+- Consultar un correo específico: `aws sesv2 get-suppressed-destination --email-address corre@prueba.com --region us-east-1`
+- Quitar un correo en particular: `aws sesv2 delete-suppressed-destination --email-address corre@prueba.com --region us-east-1`
+- Limpiar toda la lista:
+  ```sh
+  aws sesv2 list-suppressed-destinations --region us-east-1 \
+    --query 'SuppressedDestinationSummaries[].EmailAddress' --output text \
+  | tr '\t' '\n' \
+  | while read email; do
+      echo "Eliminando $email"
+      aws sesv2 delete-suppressed-destination --email-address "$email" --region us-east-1
+    done
+  ```
