@@ -53,7 +53,9 @@ git config user.email "info@nanhekumar.com"
 - elimina el archivo por completo `git rm -f [file]`
 - que no haga nada, solo para ver en donde se encuentran los archivos y que podemos hacer con él `git add -n [file]`
 - para llevar del Staging Area al repository `git commit -m ["mensaje"]`
-- concatena nuevos cambios al utimo commit realizado `git commit -amend`
+- concatena nuevos cambios al utimo commit realizado `git commit --amend`
+- cambiar el mensaje del ultimo commit `git commit --amend -m "nuevo mensaje"`
+  - si ya se hizo push: `git push --force-with-lease`
 - muestra la historia de todos los commits que hemos realizados `git log`
 - stage only deleted files with git add `git ls-files --deleted | xargs git add`
 - see the files changed in a commit `git show --name-only [sha]`
