@@ -41,7 +41,8 @@
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },
   "[dbml]": {
-    "editor.defaultFormatter": "matt-meyers.vscode-dbml"
+    "editor.defaultFormatter": "dbdiagram.dbdiagram-vscode",
+    "editor.formatOnSave": false
   },
   "[dockerfile]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -90,7 +91,8 @@
   },
   "[sql]": {
     "editor.defaultFormatter": "bradymholt.pgformatter",
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+    "editor.formatOnSave": false
   },
   "[terraform]": {
     "editor.defaultFormatter": "hashicorp.terraform"
@@ -174,7 +176,7 @@
     "jupyter-notebook": "left"
   },
   "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
-  "php-cs-fixer.lastDownload": 1785277240760,
+  "php-cs-fixer.lastDownload": 1792590166129,
   "python.defaultInterpreterPath": "/usr/bin/python3",
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.linux": "zsh",
