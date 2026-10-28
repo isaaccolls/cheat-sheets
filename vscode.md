@@ -214,6 +214,7 @@
 - bmewburn.vscode-intelephense-client
 - bradymholt.pgformatter
 - dbaeumer.vscode-eslint
+- dbdiagram.dbdiagram-vscode
 - deerawan.vscode-faker
 - docker.docker
 - dotjoshjohnson.xml
@@ -226,7 +227,6 @@
 - hashicorp.terraform
 - hediet.vscode-drawio
 - junstyle.php-cs-fixer
-- matt-meyers.vscode-dbml
 - mechatroner.rainbow-csv
 - mikestead.dotenv
 - mrmlnc.vscode-apache
@@ -252,7 +252,6 @@
 - ms-vscode.makefile-tools
 - ms-vscode.vscode-speech
 - nhoizey.gremlins
-- nicolas-liger.dbml-viewer
 - octref.vetur
 - pkief.material-icon-theme
 - raynigon.nginx-formatter
