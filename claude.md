@@ -83,3 +83,66 @@
 | `/heapdump` | Genera un heap snapshot de JS para diagnosticar uso de memoria.          |
 | `/rewind`   | Vuelve la conversación o el código a un punto anterior. Alias: `/undo`.  |
 | `/feedback` | Envía feedback al equipo de Anthropic. Alias: `/bug`.                    |
+
+# Directorios de configuración
+
+## Proyecto (se commitea en el repo)
+
+| RUTA                             | DESCRIPCIÓN                                                                            |
+| -------------------------------- | -------------------------------------------------------------------------------------- |
+| `CLAUDE.md`                      | Instrucciones del proyecto, cargadas en cada sesión. También vale `.claude/CLAUDE.md`. |
+| `CLAUDE.local.md`                | Preferencias personales del proyecto. Agrégalo a `.gitignore`.                         |
+| `.mcp.json`                      | Servidores MCP compartidos con el equipo.                                              |
+| `.worktreeinclude`               | Archivos gitignored que se copian a los worktrees nuevos.                              |
+| `.claude/settings.json`          | Permisos, hooks, variables de entorno y modelo por defecto.                            |
+| `.claude/settings.local.json`    | Overrides personales del proyecto, fuera de git.                                       |
+| `.claude/rules/*.md`             | Instrucciones por tema. Con `paths` en el frontmatter solo cargan para esos archivos.  |
+| `.claude/skills/<name>/SKILL.md` | Prompts reutilizables que se invocan con `/name` o automáticamente.                    |
+| `.claude/commands/*.md`          | Prompts de un solo archivo; mismo mecanismo que las skills.                            |
+| `.claude/agents/*.md`            | Subagentes con su propio prompt y herramientas.                                        |
+| `.claude/workflows/*.js`         | Workflows dinámicos; cada archivo se vuelve un comando `/<name>`.                      |
+| `.claude/output-styles/*.md`     | Estilos que ajustan cómo responde Claude.                                              |
+| `.claude/agent-memory/<name>/`   | Memoria persistente de los subagentes.                                                 |
+
+## Global (`~/.claude`, aplica a todos los proyectos)
+
+| RUTA                                   | DESCRIPCIÓN                                                                                |
+| -------------------------------------- | ------------------------------------------------------------------------------------------ |
+| `~/.claude/CLAUDE.md`                  | Instrucciones personales para todos los proyectos.                                         |
+| `~/.claude/settings.json`              | Settings personales para todos los proyectos.                                              |
+| `~/.claude/<carpeta>/`                 | Las mismas carpetas que `.claude/` (rules, skills, agents, etc.) para todos los proyectos. |
+| `~/.claude/keybindings.json`           | Atajos de teclado personalizados.                                                          |
+| `~/.claude/themes/*.json`              | Temas de color personalizados.                                                             |
+| `~/.claude/projects/<project>/memory/` | Auto memory: notas que Claude escribe para sí mismo entre sesiones.                        |
+| `~/.claude/plugins/`                   | Marketplaces y plugins instalados (se gestionan con `claude plugin`).                      |
+| `~/.claude.json`                       | Estado de la app, cuenta, toggles de UI y servidores MCP personales.                       |
+
+Si defines `CLAUDE_CONFIG_DIR`, todas las rutas de `~/.claude` (y `~/.claude.json`) pasan a ese directorio.
+
+## Frontmatter por archivo
+
+Skills, commands, subagentes, output styles y rules se configuran con frontmatter YAML (entre `---`) al inicio del archivo.
+
+| ARCHIVO                  | CAMPOS                                                                                                                                                                                                                                                                        |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `skills/<name>/SKILL.md` | `name`, `description`, `when_to_use`, `argument-hint`, `arguments`, `disable-model-invocation`, `user-invocable`, `allowed-tools`, `disallowed-tools`, `model`, `effort`, `context`, `agent`, `background`, `hooks`, `paths`, `shell`, `metadata`, `license`, `compatibility` |
+| `commands/*.md`          | Los mismos campos de las skills, excepto `name` y `paths`.                                                                                                                                                                                                                    |
+| `agents/*.md`            | `name`, `description`, `tools`, `disallowedTools`, `model`, `permissionMode`, `maxTurns`, `autoCompactWindow`, `skills`, `mcpServers`, `hooks`, `memory`, `background`, `effort`, `isolation`, `color`, `initialPrompt`, `omitClaudeMd`, `experimental`                       |
+| `output-styles/*.md`     | `name`, `description`, `keep-coding-instructions`, `force-for-plugin`                                                                                                                                                                                                         |
+| `rules/*.md`             | `paths`                                                                                                                                                                                                                                                                       |
+
+## Ejemplo: rule con `paths`
+
+`paths` es el único campo del frontmatter que se lee en una rule. Acepta una lista YAML o un string separado por comas. Sin `paths`, la rule carga siempre.
+
+```markdown
+---
+paths:
+  - "src/api/**/*.ts"
+---
+
+# Reglas de la API
+
+- Todos los endpoints deben validar el input.
+- Usar el formato estándar de respuesta de error.
+```
